@@ -1,0 +1,7 @@
+run_id,dataset,data_variant,mode,test_lang,train_lang,model,tokenizer,seed,n_train,n_test,num_classes,accuracy,f1_weighted,train_seconds,pretrained,bilstm_mask,params,size_mb,latency_ms_per_sample,peak_gpu_mb
+massive_localized_in-language_ko_BiLSTM_whitespace_mask_s42,massive,localized,in-language,ko,ko,BiLSTM,whitespace,42,11514,2974,60,0.733356,0.743693,101.5,,True,1243240,4.74,0.1263,
+massive_localized_in-language_ko_BiLSTM_whitespace_mask_s43,massive,localized,in-language,ko,ko,BiLSTM,whitespace,43,11514,2974,60,0.742098,0.741414,94.2,,True,1243240,4.74,0.1261,
+massive_localized_in-language_ko_BiLSTM_whitespace_mask_s44,massive,localized,in-language,ko,ko,BiLSTM,whitespace,44,11514,2974,60,0.716543,0.722995,92.9,,True,1243240,4.74,0.1103,
+massive_localized_in-language_zh_BiLSTM_whitespace_mask_s42,massive,localized,in-language,zh,zh,BiLSTM,whitespace,42,11514,2974,60,0.107263,0.117429,94.0,,True,1250940,4.77,0.1199,
+massive_localized_in-language_zh_BiLSTM_whitespace_mask_s43,massive,localized,in-language,zh,zh,BiLSTM,whitespace,43,11514,2974,60,0.106927,0.116265,102.4,,True,1250940,4.77,0.114,
+massive_localized_in-language_zh_BiLSTM_whitespace_mask_s44,massive,localized,in-language,zh,zh,BiLSTM,whitespace,44,11514,2974,60,0.105245,0.113394,91.9,,True,1250940,4.77,0.1189,

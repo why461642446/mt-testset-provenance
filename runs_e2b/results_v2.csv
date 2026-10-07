@@ -1,0 +1,13 @@
+run_id,dataset,data_variant,mode,test_lang,train_lang,model,tokenizer,seed,n_train,n_test,num_classes,accuracy,f1_weighted,train_seconds,pretrained,bilstm_mask,params,size_mb,latency_ms_per_sample,peak_gpu_mb
+massive_localized_zero-shot_ko_BERT_subword_s42,massive,localized,zero-shot,ko,en,BERT,subword,42,11514,2974,60,0.303631,0.288523,946.9,bert-base-multilingual-cased,,177899580,678.63,8.0343,1449.6
+massive_localized_zero-shot_ko_BERT_subword_s43,massive,localized,zero-shot,ko,en,BERT,subword,43,11514,2974,60,0.255548,0.252767,941.9,bert-base-multilingual-cased,,177899580,678.63,8.0125,1447.8
+massive_localized_zero-shot_ko_BERT_subword_s44,massive,localized,zero-shot,ko,en,BERT,subword,44,11514,2974,60,0.330868,0.334884,942.8,bert-base-multilingual-cased,,177899580,678.63,7.9583,1447.8
+massive_localized_zero-shot_ko_DistilBERT_subword_s42,massive,localized,zero-shot,ko,en,DistilBERT,subword,42,11514,2974,60,0.165098,0.122457,509.6,distilbert-base-multilingual-cased,,135370812,516.4,4.0262,1120.1
+massive_localized_zero-shot_ko_DistilBERT_subword_s43,massive,localized,zero-shot,ko,en,DistilBERT,subword,43,11514,2974,60,0.143578,0.104414,506.7,distilbert-base-multilingual-cased,,135370812,516.4,4.013,1120.1
+massive_localized_zero-shot_ko_DistilBERT_subword_s44,massive,localized,zero-shot,ko,en,DistilBERT,subword,44,11514,2974,60,0.188635,0.141726,506.4,distilbert-base-multilingual-cased,,135370812,516.4,3.9725,1120.1
+massive_localized_zero-shot_zh_BERT_subword_s42,massive,localized,zero-shot,zh,en,BERT,subword,42,11514,2974,60,0.667451,0.643709,889.8,bert-base-chinese,,102313788,390.3,7.9243,873.3
+massive_localized_zero-shot_zh_BERT_subword_s43,massive,localized,zero-shot,zh,en,BERT,subword,43,11514,2974,60,0.638198,0.615131,887.0,bert-base-chinese,,102313788,390.3,7.9415,873.3
+massive_localized_zero-shot_zh_BERT_subword_s44,massive,localized,zero-shot,zh,en,BERT,subword,44,11514,2974,60,0.667787,0.645564,886.8,bert-base-chinese,,102313788,390.3,8.0226,873.3
+massive_localized_zero-shot_zh_DistilBERT_subword_s42,massive,localized,zero-shot,zh,en,DistilBERT,subword,42,11514,2974,60,0.475454,0.465656,507.4,distilbert-base-multilingual-cased,,135370812,516.4,4.0437,1120.1
+massive_localized_zero-shot_zh_DistilBERT_subword_s43,massive,localized,zero-shot,zh,en,DistilBERT,subword,43,11514,2974,60,0.460659,0.447663,507.3,distilbert-base-multilingual-cased,,135370812,516.4,4.0473,1120.1
+massive_localized_zero-shot_zh_DistilBERT_subword_s44,massive,localized,zero-shot,zh,en,DistilBERT,subword,44,11514,2974,60,0.461332,0.464232,507.1,distilbert-base-multilingual-cased,,135370812,516.4,4.0173,1120.1

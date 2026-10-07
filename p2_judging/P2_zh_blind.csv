@@ -1,0 +1,271 @@
+﻿order,item_id,english_source,target_text,intent_label,judge1_category,judge2_category,judge3_category,judge1_note,judge2_note,judge3_note
+1,zh-001,check my email for any new email from joe,查看我的电子邮件查看来自乔的任何新电子邮件,email_query,A,A,A,,,
+2,zh-002,can you turn on the radio,你能点电台吗?,play_radio,B,B,B,「点电台」不自然，通常说「打开电台」，但意图仍是播放电台,“点电台”表达不自然，但仍可推断为开启/播放电台。,"点电台=点播/点菜感,tune on 不自然,但仍可懂为开收音机"
+3,zh-003,show me some current events,给我看一些当前事件,news_query,A,B,A,,,
+4,zh-004,i had food as soon as i got up,我起床后吃了东西,general_quirky,A,A,A,,,
+5,zh-005,order a twelve piece honey mustard wing combo with seasonimg altnon the fries and a sprite as the drink,"订购12块的蜜果翼组合,用果和子作为饮料.",takeaway_order,C,B,B,蜜果翼、果和子严重错译，订单内容几乎无法理解,,"菜名与饮料名(Sprite)被误译,下单意图仍在"
+6,zh-006,what was the last movie will smith was in,威尔斯·史密斯的最后一部电影是什么?,qa_factoid,B,A,A,Will Smith 误译为威尔斯·史密斯，名字错误，但问最后一部电影意图保留,,
+7,zh-007,are there any good pizza places around here,这里有没有好吃的披萨店吗?,recommendation_locations,A,A,A,,,
+8,zh-008,start some music play the radio,开始一些音乐播放广播,play_radio,A,A,A,,,
+9,zh-009,check outlook,检查前景,email_query,C,C,C,Outlook 被译成「前景」，意图完全改变为检查前景,Outlook 被译成“前景”，邮件客户端语义丢失。,"outlook误译为前景,读者不会理解为查邮箱"
+10,zh-010,post my latest entry to twitter at n.s.a.,在NSA上发布我最新的帖子,social_post,B,B,B,n.s.a. 被当作 NSA，可能误解账号，但发帖意图保留,,漏掉twitter
+11,zh-011,check my new emails and tell me what are they about,"查看我的新电子邮件,告诉我它们是什么.",email_query,B,A,A,「它们是什么」比「关于什么」略泛，但意图保留,,
+12,zh-012,how cold will it get each night this week,这周每天晚上会有多冷,weather_query,A,A,A,,,
+13,zh-013,what does oscillate mean,振荡意味着什么?,qa_definition,A,A,A,,,
+14,zh-014,please play shake it off by taylor swiftm,请玩"摇它" 泰勒·斯威夫特,play_music,B,B,B,Shake It Off 译成「摇它」，歌名不准，但播放音乐意图保留,,"歌名误译,'玩'不自然"
+15,zh-015,change the station to eighty two point four,换站到八十二点四,play_radio,A,A,A,,,
+16,zh-016,what is the time in canada now,现在加拿大时间是多少?,datetime_query,A,A,A,,,
+17,zh-017,let me hear my list,让我听到我的名单,lists_query,B,A,B,list 译成「名单」可能不精确（可能是待办列表），但意图保留,,'名单'不是list的自然说法
+18,zh-018,play the most popular elton john song,播放最受欢迎的埃尔顿约翰歌曲,play_music,A,A,A,,,
+19,zh-019,find route,找到路线,qa_factoid,A,A,A,,,
+20,zh-020,create a notification reminder for meeting tomorrow,创建一个通知提醒明天的会议,calendar_set,A,A,A,,,
+21,zh-021,i want to hear the last news from c. n. n.,我想听到CNN的最新消息.,news_query,A,A,A,,,
+22,zh-022,show latest news,显示最新新闻,news_query,A,A,A,,,
+23,zh-023,is there a meeting on my calendar this afternoon,"今天下午,我有没有会议?",calendar_query,A,A,A,,,
+24,zh-024,please make the lights natural,请让灯光自然.,iot_hue_lightchange,A,A,A,,,
+25,zh-025,let me know the recipe for preparing pasta,让我知道食的配方,cooking_recipe,C,B,B,「食的配方」漏了「意」字且不通顺，几乎无法理解是意面食谱,,pasta漏译
+26,zh-026,add event for meeting with james,加入与詹姆斯的会议活动,calendar_set,A,A,A,,,
+27,zh-027,play an f. m.,打一个F.M.,play_radio,B,B,B,「打一个F.M.」不自然，但意图仍是播放调频电台,“打一个F.M.”很生硬，但仍可由 F.M. 推断为电台播放。,'打一个F.M.'不自然
+28,zh-028,let me know any new emails i've received,让我知道我收到的任何新电子邮件,email_query,A,A,A,,,
+29,zh-029,i would like to hear some rap music,我想听一些拉普音乐,play_music,B,B,A,rap 译成「拉普」不标准（通常说说唱），但意图保留,,
+30,zh-030,remind me to take out the garbage at six p. m.,提醒我在晚上六点拿出垃圾.,calendar_set,A,A,A,,,
+31,zh-031,when does my alarm go off,什么时候我的警报会响起,alarm_query,A,A,A,,,
+32,zh-032,olly what are new drama movies opening this weekend,"艾莉,今周末开幕的新剧情电影是什么?",recommendation_movies,A,A,A,,,
+33,zh-033,play a podcast from my library,从我的图书馆播放一个播客,play_podcasts,A,B,A,,,
+34,zh-034,add a new email for julie smith,给朱莉史密斯添加一个新的电子邮件,email_sendemail,B,C,A,「添加一个新的电子邮件」更像添加联系人而非发邮件，但结合意图标签可理解为发邮件,译文更像“给联系人添加一个邮箱”，不再明确表示撰写/发送邮件。,
+35,zh-035,i need to get up at ten tomorrow,我需要早上10点起床.,alarm_set,A,B,A,,,
+36,zh-036,the definition of life,生命的定义,qa_definition,A,A,A,,,
+37,zh-037,call the nearest thai restaurant with delivery,"联系最接近的泰国餐厅,",takeaway_order,B,B,B,漏掉「with delivery」配送信息，只说联系最近泰国餐厅,,漏掉delivery
+38,zh-038,quiet time,静静的时间,audio_volume_mute,C,A,B,「静静的时间」无法明确表达静音意图，意图模糊,,"原句本身含糊;译文字面'静静的时间',看不出静音"
+39,zh-039,tell comcast i hate them,"告诉康卡斯,我讨厌他们.",social_post,B,A,A,Comcast 译成康卡斯，名称不准，但告诉他们讨厌的意图保留,,
+40,zh-040,does allearsnet have a new podcast,艾尔尔斯网有没有新的播客,play_podcasts,B,A,B,allearsnet 译成艾尔尔斯网，名称不准，但查询播客意图保留,,站名音译失真
+41,zh-041,how many tornadoes have there been this month,这个月有多少次风,general_quirky,B,B,B,tornadoes 译成「风」漏了「龙卷」，内容泛化,,tornado漏译为'风'
+42,zh-042,open inbox to check unread mails,打开收件箱查看未读的邮件,email_query,A,A,A,,,
+43,zh-043,set wake up thursday seven am,设置星期四早上7点起床,alarm_set,A,A,A,,,
+44,zh-044,get rid of the events on the nineteenth from my calendar,摆脱我的日历的十九日事件,calendar_remove,A,A,B,,,'摆脱'不自然
+45,zh-045,open chess app and begin game,"打开棋牌应用程序,开始游戏",play_game,B,B,B,chess 译成「棋牌」泛化（棋牌包括多种游戏），但意图保留,,"chess→棋牌,泛化"
+46,zh-046,how far is canada from my current location,"距离我现在的位置有多远,加拿大",qa_factoid,A,A,A,,,
+47,zh-047,remove succeeding event,删除后续事件,calendar_remove,A,A,A,,,
+48,zh-048,how much is a round trip train ticket to go to new york,一次往返到纽约的火车票多少钱,transport_query,A,A,A,,,
+49,zh-049,tell me what i wore yesterday,告诉我昨天我穿什么,general_quirky,A,A,A,,,
+50,zh-050,post this to my facebook l. o. l.,发到我的Facebook上.,social_post,B,B,B,漏掉 l.o.l.，但发到Facebook意图保留,,漏掉lol
+51,zh-051,please set the brightness of lightness appropriately in kitchen,请在厨房中适当设置轻度的亮度,iot_hue_lightup,B,A,B,「轻度的亮度」不自然，但设置厨房灯亮度意图保留,,lightness误译为轻度
+52,zh-052,open tweet to apple that my iphone's battery is always drained,开封推文给果说我的iPhone电池总是耗尽,social_post,C,B,B,「开封推文给果」严重错译，几乎无法理解是给苹果发推文,,"'开封推文'、'果'(Apple)误译,勉强可推测"
+53,zh-053,cancel business meeting on wednesday,取消周三的商务会议,calendar_remove,A,A,A,,,
+54,zh-054,keep me informed about bitcoin price,让我知道比特币价格,news_query,A,B,A,,,
+55,zh-055,check if alarm is set for six am,检查是否设置警报时间为早上6点,alarm_query,A,A,A,,,
+56,zh-056,alexa play song over the rainbow,亚历克萨在彩虹上演奏歌曲,play_music,B,B,B,「在彩虹上演奏歌曲」歌名Over the Rainbow译不准，但播放意图保留,,"歌名误译,'演奏'不对"
+57,zh-057,is there anything new in my mailbox,在我的邮箱里有什么新东西吗?,email_query,A,A,A,,,
+58,zh-058,when's mark lanegan's next album out,马克·莱尼根下一个专辑什么时候出炉?,qa_factoid,A,A,A,,,
+59,zh-059,change volume settings in the negative alexa,在负 alexa 中改变音量设置,audio_volume_other,C,B,B,「在负 alexa 中改变音量设置」不通，意图模糊/改变,“negative alexa”被直译得很怪，但“改变音量设置”仍保留。,"译文不通顺,音量意图勉强可见"
+60,zh-060,tell me if taco bell delivers,"告诉我,如果塔科贝尔交付",takeaway_query,B,A,B,「如果塔科贝尔交付」语法不通，但查询配送意图大致保留,,'交付'生硬
+61,zh-061,tell me current time in los angels,告诉我洛杉矶的时间,datetime_query,A,A,A,,,
+62,zh-062,olly set alarm for reminder,"为了提醒,安装了警报",alarm_set,B,B,B,「为了提醒，安装了警报」表述不清，但设闹钟意图保留,译文变成陈述式，但设置警报用于提醒的意图仍可推断。,时态/用词不对
+63,zh-063,house lights blue,房子灯蓝色,iot_hue_lightchange,A,A,A,,,
+64,zh-064,get me match highlights,给我一个匹配的亮点,news_query,C,C,C,「匹配的亮点」无法理解是比赛集锦，意图改变,“match”被译成“匹配”，体育比赛集锦的含义基本丢失。,"match highlights误译为'匹配的亮点',失去体育新闻意思"
+65,zh-065,tell me the funniest joke that was ever told,告诉我有史以来最有趣的笑话,general_joke,A,A,A,,,
+66,zh-066,can you remove this item from the list,您可以从列表中删除这个项目吗?,lists_remove,A,A,A,,,
+67,zh-067,how is it outside today,今天外面怎么样,weather_query,A,A,A,,,
+68,zh-068,any mail from amazon today,今天从亚马逊发出任何邮件,email_query,A,A,A,,,
+69,zh-069,what artist is this,这位艺术家是什么?,music_query,A,A,B,,,
+70,zh-070,what i like today,今天我喜欢的,general_quirky,C,A,A,「今天我喜欢的」无法明确原意，意图模糊,,
+71,zh-071,open contacts,开放的联系,email_addcontact,C,C,C,「开放的联系」不通，无法理解是打开联系人,“contacts”被译成“联系”，不再明确表示打开通讯录/联系人。,"open contacts译成'开放的联系',意思不通"
+72,zh-072,can you make the lights go out,你能让灯光灭吗?,iot_hue_lightoff,A,A,A,,,
+73,zh-073,lead the way to the place,带领我们去那个地方,transport_query,B,A,B,「带领我们去那个地方」比「带路」略泛，但导航意图保留,,多出'我们'
+74,zh-074,do not make any noise until morning alarm,在早晨起钟之前不要做任何噪音,audio_volume_mute,A,A,B,,,alarm译得生硬
+75,zh-075,show me any emails received in the last hour,给我看过去一小时收到的任何电子邮件,email_query,A,A,A,,,
+76,zh-076,turn off the dining room,关掉餐厅,iot_hue_lightoff,B,A,A,「关掉餐厅」可能指关灯，意图大致保留但略模糊,,
+77,zh-077,lower volume by fifty percent,低于50%的体积,audio_volume_down,C,C,C,「低于50%的体积」volume误译为体积，意图改变,音量被译成“体积”，且降低音量的命令含义不清。,"'体积'误译volume,'低于50%'变成状态而非降低50%"
+78,zh-078,what is elvis favorite ride,埃尔维斯最喜欢的骑车是什么?,qa_factoid,B,B,B,ride 译成「骑车」可能不准，但意图保留,,ride→骑车
+79,zh-079,what time is it in austin,澳斯是什么时候,datetime_query,C,B,C,Austin 译成「澳斯」错误，且「是什么时候」不通,,"'澳斯是什么时候'读成别的问题,时间查询意图不清"
+80,zh-080,find a description about a samsung t. v.,找一个关于三星电脑的描述.,qa_definition,C,B,B,Samsung TV 被译成「三星电脑」，意图改变,,TV→电脑
+81,zh-081,what is the difference between roman and grigorean calendar,罗马和格里戈里历的区别是什么?,qa_factoid,B,A,A,Gregorian 译成格里戈里历，拼写略有差异，但意图保留,,
+82,zh-082,find the ways of travel for the same,"找到旅行方式,",transport_query,B,B,B,「找到旅行方式」漏掉具体语境，内容泛化,,
+83,zh-083,please get the coffee machine to make me some coffee,请把咖啡机给我做一些咖啡,iot_coffee,A,A,B,,,
+84,zh-084,what is two hundred divided by ten,两百分之十是什么?,qa_maths,C,C,C,「两百分之十」完全错误（应为200除以10），意图改变,“200 除以 10”被译成“两百分之十”，数学运算改变。,'两百分之十'数学意思反了/不通
+85,zh-085,current song playing what is it,现在的歌曲是什么,music_query,A,A,A,,,
+86,zh-086,show me the events in my work calendar for next week,给我看下周的工作日程中的事件,calendar_set,B,A,A,意图标签是calendar_set但内容是查询，译文是查询，与英文一致但标签可能错；按英文意图保留为查询,,
+87,zh-087,clear out the shopping list,清除购物清单,lists_remove,A,A,A,,,
+88,zh-088,hello i want to turn off my wemo plug,"您好,我想关掉我的微电插头.",iot_wemo_off,B,B,B,Wemo 译成「微电」不准，但关插头意图保留,,
+89,zh-089,does pink have a new baby,粉红有没有新生儿,qa_factoid,B,B,B,Pink 译成「粉红」，可能误解艺人，但意图保留,,
+90,zh-090,set an alarm for tomorrow at six in the morning,设置明天早上六点的警报,alarm_set,A,A,A,,,
+91,zh-091,exchange rate of euro with dollar,欧元美元汇率,qa_currency,A,A,A,,,
+92,zh-092,please check the trending topics on twitter,请查看Twitter上的流行话题,social_query,A,A,A,,,
+93,zh-093,what is the email address for tessa,泰萨的电子邮件地址是什么?,email_querycontact,A,A,A,,,
+94,zh-094,please play only music of pop mix,请只播放流行音乐,play_music,B,B,B,「流行音乐」漏了mix具体，内容略泛,,
+95,zh-095,tell me about mary s.,告诉我关于玛丽斯.,email_querycontact,B,A,B,Mary S. 译成玛丽斯，略有差异,,Mary S.被当成人名'玛丽斯'
+96,zh-096,what store is having sales tomorrow,明天有什么商店会卖,general_quirky,B,B,B,「会卖」可能指打折销售，但略模糊,,sales未译成促销
+97,zh-097,play my station,玩我的站点,play_radio,B,C,B,「玩我的站点」不自然，但播放电台意图保留,“station”变成“站点”，“play”变成“玩”，电台播放意图不清。,
+98,zh-098,what time have you set the alarm,你在什么时候设置警报?,alarm_query,A,B,A,,可理解为“什么时候设置了警报”，而非“警报设在几点”。,
+99,zh-099,remind me about my anniversary in one day advance,一天前提醒我我的周年纪念日,calendar_set,A,A,A,,,
+100,zh-100,recipes that can be cooked in an hour,几种可以在一个小时内做的食谱,cooking_recipe,A,A,A,,,
+101,zh-101,post my business on twitter,在Twitter上发布我的业务,social_post,A,A,A,,,
+102,zh-102,please tell me what is the definition of cylinder,请告诉我筒的定义是什么?,qa_definition,B,A,B,cylinder 译成「筒」略简，但意图保留,,cylinder漏字
+103,zh-103,clean the floor,清理地板,iot_cleaning,A,A,A,,,
+104,zh-104,olly play poker with me,艾莉和我一起玩克,play_game,B,B,B,poker 译成「克」不完整，但玩游戏意图保留,,poker译成'克'
+105,zh-105,tell me about city traffic,告诉我城市交通,transport_traffic,A,A,A,,,
+106,zh-106,topic,问题,email_query,C,C,C,「问题」无法理解是email主题，意图改变,“topic”被译成“问题”，核心词义改变。,"topic→问题,误译"
+107,zh-107,any mail from amazon today,今天从亚马逊发出任何邮件,email_query,A,A,A,,,
+108,zh-108,write an email for john at gmail dot com,给约翰写电子邮件在Gmail点com,email_sendemail,B,A,A,「Gmail点com」保留dot，略生硬，但意图保留,,
+109,zh-109,sticking to diet,坚持饮食,general_quirky,A,A,A,,,
+110,zh-110,please tell me the latest news,请告诉我最新的新闻,news_query,A,A,A,,,
+111,zh-111,what is the fastest way to get to starbucks,什么是最快的方法去星巴克,transport_query,A,A,A,,,
+112,zh-112,make a new alarm,打一个新的警报,alarm_set,B,B,B,「打一个新的警报」不自然，但设闹钟意图保留,,'打一个新的警报'不自然
+113,zh-113,play for me music by the beatles,给我播放比特尔队的音乐,play_music,B,A,B,Beatles 译成比特尔队，名称不准，但意图保留,,
+114,zh-114,show me the available colors of lights,给我看看灯的颜色,iot_hue_lightchange,A,B,B,,,
+115,zh-115,how much is a round trip train ticket to go to new york,一次往返到纽约的火车票多少钱,transport_query,A,A,A,,,
+116,zh-116,i would like it to help analyze ideas,我希望它能帮助分析想法,general_quirky,A,A,A,,,
+117,zh-117,can i get delilah on the radio in the bedroom,我可以在卧室里收音机上听戴丽拉吗?,play_radio,A,A,A,,,
+118,zh-118,check if alarm is set for six am,检查是否设置警报时间为早上6点,alarm_query,A,A,A,,,
+119,zh-119,what's the date of the winter solstice two years from now,冬日变化的日期是什么?,datetime_query,C,B,B,「冬日变化」无法理解是冬至，意图改变,“winter solstice”和“两年后”均未保住，但仍是在询问日期。,two years from now漏译
+120,zh-120,what's a good joke,什么是个好笑话,general_joke,A,A,A,,,
+121,zh-121,remind me everyday at two p. m. for lunch,每天晚上两点就提醒我吃午饭,calendar_set,B,B,B,「每天晚上两点」应为下午两点，时间错误，但提醒意图保留,,p.m.→晚上
+122,zh-122,book a first class ticket in the next train to miami,在下一列列车上预订一班票前往迈阿密,transport_ticket,B,B,B,「一班票」漏了first class，内容有出入,,first class漏译
+123,zh-123,play the previous podcast,播放之前的播客,play_podcasts,A,A,A,,,
+124,zh-124,what time does the train arrive in sacremento,列车到达萨克里门托什么时候,transport_query,B,A,A,Sacramento 译成萨克里门托，拼写略差，但意图保留,,
+125,zh-125,check unread emails from amy,查看艾米的未读的电子邮件,email_query,A,A,A,,,
+126,zh-126,list out my schedule today,列出我今天的时间表,calendar_query,A,A,A,,,
+127,zh-127,tell me about the cheapest flight fares to nj today,告诉我今天最便宜的飞行票,transport_ticket,B,B,B,「飞行票」应为机票，且漏NJ具体，但意图保留,,nj漏译
+128,zh-128,email jerry regarding the meeting,关于会议的电子邮件,email_sendemail,B,C,C,漏了收件人Jerry的明确动作，内容略泛,收件人 Jerry 和发送动作均丢失，译文只剩“关于会议的电子邮件”。,"漏掉jerry和发送动作,读成'关于会议的电子邮件'"
+129,zh-129,i wish it could give me advice,我希望它能给我一个建议,general_quirky,A,A,A,,,
+130,zh-130,play all music by billy joel,播放所有音乐的比利乔尔,play_music,B,A,A,语序「播放所有音乐的比利乔尔」略怪，但意图保留,,
+131,zh-131,what is the quickest way to my work downtown without hitting any traffic,"什么是最快的方法去我的工作中心,没有碰到任何交通",transport_query,A,B,B,,,downtown→中心
+132,zh-132,show me the events in my work calendar for next week,给我看下周的工作日程中的事件,calendar_set,B,A,A,同86，内容是查询但标签set；按英文保留,,
+133,zh-133,will it snow tomorrow at noon,明天下午会有雪吗?,weather_query,B,B,B,noon 译成下午，略不准，但意图保留,,noon→下午
+134,zh-134,can you give me the details of upcoming annual function on twenty sixth march,你能给我讲下20月6日的年度活动的细节吗?,general_quirky,C,B,B,「20月6日」日期错误（应为3月26日），内容严重错误,,日期错误
+135,zh-135,it is seven am in pacific standard time,现在是太平洋标准时间上午7点.,datetime_convert,A,A,A,,,
+136,zh-136,please remind me about this tomorrow,请提醒我明天,calendar_set,A,B,A,,,
+137,zh-137,how's the weather like in new jersey,纽约泽西的天气是什么样子,weather_query,B,B,B,New Jersey 译成纽约泽西，错误，但天气查询意图保留,,
+138,zh-138,what is the time in las vegas,拉斯维加斯有什么时间?,datetime_query,B,A,A,「有什么时间」不自然，但意图保留,,
+139,zh-139,show geographic details of pyramids,显示金字塔的地理细节,qa_factoid,A,A,A,,,
+140,zh-140,the sun is shinning bright will we have this weather for the rest of the day,"太阳正在闪耀,我们会在余下的天气.",weather_query,C,C,B,后半句「我们会在余下的天气」不通，意图模糊,后半句残缺，无法自然恢复“这种天气是否持续到今天结束”的问题。,译文不完整
+141,zh-141,hey what's a book,",什么是书",qa_definition,C,A,A,开头逗号且「什么是书」过于简略，意图模糊,,
+142,zh-142,let's hear some indie rock okay,让我们听一些独立摇滚吧,play_music,A,A,A,,,
+143,zh-143,create an alarm for today at ten am,打造一个今天早上10点的警报,alarm_set,A,A,B,,,
+144,zh-144,user friendly,适合用户,news_query,C,A,B,「适合用户」无法理解原意user friendly作为新闻查询，意图改变,,
+145,zh-145,i want to order a pizza from michael's pizza,我想要从迈克尔的披萨订购披萨.,takeaway_order,A,A,A,,,
+146,zh-146,play my favorite book,玩我最喜欢的书,play_audiobook,B,C,A,「玩我最喜欢的书」audiobook用「玩」不自然，但意图保留,“play book”被译成“玩书”，无法明确恢复有声书播放意图。,
+147,zh-147,have i received any emails in the last ten minutes,"在过去的10分钟里,我是否收到任何电子邮件?",email_query,A,A,A,,,
+148,zh-148,tweet samsung and tell them to stop killing people with their products,"推文给三星说,不要用他们的产品杀人人",social_post,B,A,A,「杀人人」重复，但发推文意图保留,,
+149,zh-149,lower the intensity of light,降低光强度,iot_hue_lightdim,A,A,A,,,
+150,zh-150,please play only sad song in music player,请在音乐播放器中播放只有悲伤的歌曲,play_music,A,A,A,,,
+151,zh-151,set alarm of only monday morning six am,只有星期一早上六点的警报,alarm_set,B,B,B,「只有星期一早上六点的警报」略缺「设置」，但意图保留,,
+152,zh-152,please compose a new email to coworker,请给同事写一个新的电子邮件,email_sendemail,A,A,A,,,
+153,zh-153,how is the traffic presently near central park road,现在中央公园公路附近的交通状况如何,transport_traffic,A,A,A,,,
+154,zh-154,i want to know about this song,我想知道这个歌曲,music_query,A,A,A,,,
+155,zh-155,open stock price for name,开放股票价格,qa_stock,B,B,B,「开放股票价格」不自然，但查股价意图保留,,for name漏译
+156,zh-156,post my latest entry to twitter at n.s.a.,在NSA上发布我最新的帖子,social_post,B,B,B,同10,,
+157,zh-157,olly play a good track from my favorite jazz player,艾莉演奏了我最喜欢的爵士乐手的好曲子,play_music,B,C,B,「演奏了」时态错误，但播放音乐意图保留,播放请求被译成过去式陈述，命令意图发生变化。,
+158,zh-158,please say to the email that sent me george i need the money now it's urgent,"请告诉发给我的电子邮件乔治,我需要钱,现在是紧急的.",email_sendemail,C,B,B,译文严重不通，无法理解是回复邮件内容,,语序混乱
+159,zh-159,do i have a sales meeting today,今天我有卖会吗?,calendar_query,B,B,B,「卖会」应为销售会议，略不准,,sales meeting→卖会
+160,zh-160,what reminders do i have scheduled before noon tomorrow,我明天下午之前安排了什么提醒?,calendar_query,B,B,B,「明天下午之前」应为中午之前，时间错误,,noon→下午
+161,zh-161,remind me the meeting with allen on fifteenth march,"提醒我,我们在15月15日与艾伦的会面.",calendar_set,C,B,B,「15月15日」日期错误（应为3月15日）,,日期15月15日错误
+162,zh-162,can you book an uber tomorrow,你能预订一个Uber明天吗?,transport_taxi,A,A,A,,,
+163,zh-163,play netflix on my p. s. four,在我的第4页上播放Netflix,play_radio,C,B,B,PS4 译成「第4页」，意图完全改变,PS4 被误译成“第4页”，但播放 Netflix 的动作仍在。,PS4误译为第4页
+164,zh-164,tell me what i wore yesterday,告诉我昨天我穿什么,general_quirky,A,A,A,,,
+165,zh-165,reply to the mail with the following content hello you,回答邮件的内容如下:,email_sendemail,B,B,B,漏掉具体内容「hello you」，只说回答如下,,漏掉内容hello you
+166,zh-166,i need good ideas for cooking,我需要好主意做饭,cooking_recipe,A,A,A,,,
+167,zh-167,turn off the dining room,关掉餐厅,iot_hue_lightoff,B,A,A,同76,,
+168,zh-168,i occasionally pay attention,我偶尔会注意,weather_query,C,A,A,「我偶尔会注意」与天气无关，意图改变,,
+169,zh-169,can you lower the lights,你能放下灯?,iot_hue_lightdim,B,C,C,「放下灯」不自然（通常说调暗），但调暗意图保留,“lower the lights”表示调暗，译文“放下灯”变成物理移动。,"'放下灯'读成put down,不是调暗"
+170,zh-170,play the next one,玩下一个,play_podcasts,B,B,B,「玩下一个」不自然，但播放下一个播客意图保留,“玩下一个”仍保留“下一个”的推进含义，但播客播放语义较弱。,'玩'不自然
+171,zh-171,contact detail of paul,保罗的联系细节,email_querycontact,A,A,A,,,
+172,zh-172,what is the interview time from yesterday's email,"截至昨天的电邮,面试时间是多少?",email_query,B,B,A,「截至昨天的电邮」表述略怪，但意图保留,,
+173,zh-173,when is the next train to glasgow from aberdeen,从阿伯迪恩到格拉斯哥的下一列火车是什么时候?,transport_query,A,A,A,,,
+174,zh-174,could you please create a pandora channel for adele,你能为阿德尔创建一个潘多拉频道吗?,music_settings,A,A,A,,,
+175,zh-175,do i have any new friend requests,我有没有新的朋友请求,social_query,A,A,A,,,
+176,zh-176,i like this song please save,"我喜欢这首歌,请保存",music_likeness,A,A,A,,,
+177,zh-177,i mostly pay attention,我主要注意,weather_query,C,A,A,「我主要注意」与天气无关，意图改变,,
+178,zh-178,set up a notification about tomorrow's meeting at ten,设定明天10点的会议通知,calendar_set,A,A,A,,,
+179,zh-179,resume joes book from where i left off last time,继续乔的书从我最后一次停下来,play_audiobook,A,A,A,,,
+180,zh-180,recite the schedules of the list,阅读列表的时间表,lists_query,B,A,A,「阅读列表的时间表」可能不准，但查询列表意图保留,,
+181,zh-181,find the ways of travel for the same,"找到旅行方式,",transport_query,B,B,B,同82,,
+182,zh-182,remove the old music list,删除旧音乐列表,lists_remove,A,A,A,,,
+183,zh-183,could you please create a pandora channel for adele,你能为阿德尔创建一个潘多拉频道吗?,music_settings,A,A,A,,,
+184,zh-184,which film the music comes from what is the name of the music,电影音乐来自哪个电影音乐的名字是什么,music_query,B,A,A,语序混乱但意图大致保留,,
+185,zh-185,do you know jessica snout's phone number,你知道杰西卡斯诺斯的电话号码吗?,qa_factoid,B,A,A,Jessica Snout 译成杰西卡斯诺斯，名字不准,,
+186,zh-186,latest new on international women's day,关于国际妇女节的最新消息,news_query,A,A,A,,,
+187,zh-187,are there any free events on in my area today,今天在我的地区有没有免费活动,recommendation_events,A,A,A,,,
+188,zh-188,get rid of the events on the nineteenth from my calendar,摆脱我的日历的十九日事件,calendar_remove,A,A,B,,,
+189,zh-189,tell me that list i wrote two days ago,告诉我我两天前写的列表,lists_query,A,A,A,,,
+190,zh-190,it's my mother's birthday today send me a notification every year on this date,今天是我母亲的生日. 每年都会发送通知.,calendar_set,B,B,B,漏了「send me a notification every year」的明确请求结构，但意图保留,,漏掉send me
+191,zh-191,i want to know more about this event,我想知道更多关于这个事件的信息.,calendar_query,A,A,A,,,
+192,zh-192,where is mary's birthday party being held,玛丽的生日聚会在哪里举行,calendar_query,A,A,A,,,
+193,zh-193,order a twelve piece honey mustard wing combo with seasonimg altnon the fries and a sprite as the drink,"订购12块的蜜果翼组合,用果和子作为饮料.",takeaway_order,C,B,B,同5，严重错译,,
+194,zh-194,is it any ones birthday,是不是某人的生日,calendar_query,A,A,A,,,
+195,zh-195,play for me the music by the beatles,给我播放比特尔队的音乐,play_music,B,A,B,同113,,
+196,zh-196,mark april twenty as my brother's birthday,标记4月二十日为我哥哥的生日,calendar_set,A,A,A,,,
+197,zh-197,please read new emails,请阅读新的电子邮件,email_query,A,A,A,,,
+198,zh-198,i need to find a gift what stores are within a one mile radius,我需要找到礼物. 哪些商店在一英里半径内.,recommendation_locations,A,A,A,,,
+199,zh-199,give details of rock sand,提供岩石沙的详细信息,qa_definition,B,A,A,rock sand 可能指某种事物，译成岩石沙，意图保留,,
+200,zh-200,what can i do in berlin,我在柏林能做什么,recommendation_events,A,A,A,,,
+201,zh-201,change volume settings in the negative alexa,在负 alexa 中改变音量设置,audio_volume_other,C,B,B,同59,,
+202,zh-202,internet please,"互联网,请",general_quirky,B,A,A,「互联网，请」过于简略，但意图大致保留,,
+203,zh-203,show me any emails received in the last hour,给我看过去一小时收到的任何电子邮件,email_query,A,A,A,,,
+204,zh-204,i want to order chinese take-out,我想要订购中国菜.,takeaway_order,A,B,B,,,take-out漏译
+205,zh-205,play poker face by lady gaga,玩克脸的女士加加,play_music,C,C,B,Poker Face by Lady Gaga 严重错译成「玩克脸的女士加加」，几乎无法理解,歌名、歌手和“play”均严重误译，音乐播放意图难以恢复。,"歌名/人名误译,'玩'"
+206,zh-206,what is two hundred divided by ten,两百分之十是什么?,qa_maths,C,C,C,同84,“200 除以 10”被译成“两百分之十”，运算含义改变。,同84
+207,zh-207,what time are the trains going to chennai leaving,列车到奈的时间是什么时候离开的,transport_query,C,B,B,Chennai 译成「奈」，几乎无法识别，意图受损,,地名误译
+208,zh-208,add a meeting at the office with brian for three p. m. on tuesday,增加一个会议在办公室与布莱恩的下午3点星期二,calendar_set,A,A,A,,,
+209,zh-209,recite the schedules of the list,阅读列表的时间表,lists_query,B,A,A,同180,,
+210,zh-210,what is the difference between bake and broil,烤肉和烤肉的区别是什么?,cooking_recipe,C,C,C,bake and broil 都译成「烤肉」，意图改变（无法区分）,bake 和 broil 都被译成“烤肉”，两种烹饪方式的对比消失。,"bake和broil都译成烤肉,区别问题不成立"
+211,zh-211,i want to see the next podcast available,我想看下一个播客可用,play_podcasts,B,A,B,「看下一个播客可用」略怪，但意图保留,,
+212,zh-212,alexa start email,亚历克萨开始电子邮件,email_sendemail,B,A,B,「开始电子邮件」不自然，但意图保留,,alexa start email 译法生硬
+213,zh-213,what's the latest news from xinhua,华最新的新闻是什么?,news_query,B,B,B,Xinhua 漏译成「华」，名称不完整,,
+214,zh-214,do i have any appointments,我有没有约会?,calendar_query,A,B,B,,“appointments”译成“约会”，可能缩窄为私人约会，但日程查询意图仍在。,约会有歧义
+215,zh-215,open contacts,开放的联系,email_addcontact,C,C,C,同71,“contacts”被译成“联系”，不再明确表示通讯录/联系人。,同71
+216,zh-216,set the coffee maker to on,设置咖啡机上,iot_coffee,B,B,B,「设置咖啡机上」略不完整，但意图保留,“设置咖啡机上”语法错误，但仍可推断为把咖啡机打开。,
+217,zh-217,when was the us got freedom,美国什么时候获得自由?,qa_factoid,A,A,A,,,
+218,zh-218,will it snow tomorrow at noon,明天下午会有雪吗?,weather_query,B,B,B,同133,,
+219,zh-219,tell me the news about share market ups and downs,告诉我股市上和下跌的消息,news_query,A,A,A,,,
+220,zh-220,power off please,"关闭电源,请",iot_wemo_off,A,A,A,,,
+221,zh-221,it must be taste,这一定是味道.,cooking_recipe,C,A,A,「这一定是味道」无法理解原意，意图改变,,
+222,zh-222,hayathis daughter baby shower,哈伊塔斯女儿的婴儿淋浴,calendar_set,C,B,B,「婴儿淋浴」是baby shower直译错误，应为迎婴派对，意图模糊,,
+223,zh-223,what is the population of russia,俄罗斯人口是多少,qa_factoid,A,A,A,,,
+224,zh-224,noodles one pack make it as takeaway,"一包面包,可以作为带来.",takeaway_order,C,C,B,「一包面包，可以作为带来」严重错译，noodles变成面包，意图改变,noodles 被译成面包，takeaway 也被译坏，点单/外带意图难以恢复。,"noodles→面包,takeaway译得不通"
+225,zh-225,i want some jazz music to play,我想要一些爵士音乐来演奏,play_music,A,A,A,,,
+226,zh-226,play papa pear saga,玩爸爸梨故事,play_game,B,B,B,Papa Pear Saga 译成爸爸梨故事，名称不准，但玩游戏意图保留,,
+227,zh-227,put my dinner at red lobster on the calendar for today at nine,"现在晚上9点,我把晚餐放在红的日历上.",calendar_set,C,B,B,「放在红的日历上」严重错译，Red Lobster和日期时间混乱,仍能看出把晚餐放入日历，但 Red Lobster 和时间关系被明显译错。,
+228,zh-228,what is the timing of bagmati express,巴格马蒂快车的时间是什么?,transport_query,A,A,A,,,
+229,zh-229,searching information online,在网上搜索信息,general_quirky,A,A,A,,,
+230,zh-230,i went to the store,我去商店,general_quirky,A,A,A,,,
+231,zh-231,can you put on the giver,你能给给人吗?,play_audiobook,C,C,C,The Giver 译成「给人」，无法理解是有声书，意图改变,The Giver 被拆成“给人”，有声书播放意图完全丢失。,"'给给人'不通,give r误译"
+232,zh-232,make me a cup of coffee with salted carmel flavored cream,"给我一个杯咖啡,用的卜味",iot_coffee,C,B,B,「用的卜味」严重错译salted caramel，几乎无法理解,,
+233,zh-233,will there be a fall in temperature by tonight,"到今晚,气温会下降吗?",weather_query,A,A,A,,,
+234,zh-234,scratch that one from the list,掉这个名单,lists_remove,B,B,B,「掉这个名单」不完整，但删除意图保留,“掉这个名单”很生硬，仍可勉强理解为从列表中删除。,
+235,zh-235,get rid of my current alarms,摆脱我的当前警报,alarm_remove,A,A,A,,,
+236,zh-236,add a new email for julie smith,给朱莉史密斯添加一个新的电子邮件,email_sendemail,B,C,A,同34,译文更像“给联系人添加一个邮箱”，不再明确表示撰写/发送邮件。,
+237,zh-237,where was president madison born,麦迪逊总统出生在哪里,qa_factoid,A,A,A,,,
+238,zh-238,answer to pawel's email,回答帕威尔的电子邮件,email_sendemail,A,A,A,,,
+239,zh-239,can you book a train ticket,你能预订火车票吗?,transport_ticket,A,A,A,,,
+240,zh-240,what is the latest story from fox news,福克斯新闻最新的消息是什么?,news_query,A,A,A,,,
+241,zh-241,will the temperature be higher than forty tomorrow,明天的温度将超过40°C吗?,weather_query,A,B,A,,,
+242,zh-242,can you put in lee's birthday on the twenty second of june,你能把李的生日放在6月20日吗?,calendar_set,C,B,B,「6月20日」应为6月22日，日期错误,,日期20日应为22日
+243,zh-243,save this song to playlist,保存这首歌到播放列表,music_likeness,A,A,A,,,
+244,zh-244,find out what song this is and tell me the name,"找出这首歌是什么,告诉我这个歌的名字.",music_query,A,A,A,,,
+245,zh-245,please give me information on michael jackson,请给我关于迈克尔·杰克逊的信息,qa_factoid,A,A,A,,,
+246,zh-246,what time is the black tie gala dinner supposed to begin,黑晚宴应该开始什么时候?,calendar_query,B,B,B,「黑晚宴」漏了tie，但意图保留,,black tie漏译
+247,zh-247,i wish it could give me advice,我希望它能给我一个建议,general_quirky,A,A,A,,,
+248,zh-248,emails in the last ten minutes,在过去的10分钟内发送的电子邮件,email_query,B,B,A,「发送的电子邮件」可能指发出而非收到，略有出入,,
+249,zh-249,please look in to the matter,请看看这个问题,general_quirky,A,A,A,,,
+250,zh-250,send mom an email now,现在给发电子邮件,email_sendemail,B,B,B,「给发电子邮件」漏了mom，但意图大致保留,,漏掉mom
+251,zh-251,drive the car and bring my friends over,开车带我的朋友来,general_quirky,A,A,A,,,
+252,zh-252,play me last year's hits,给我播放去年的歌曲,play_music,A,B,B,,,
+253,zh-253,start some music play the radio,开始一些音乐播放广播,play_radio,A,A,A,,,
+254,zh-254,remove birthday from calendar,从日历中删除生日,calendar_remove,A,A,A,,,
+255,zh-255,how long will my lunch meeting be on tuesday,星期二的午餐会将会有多长时间,calendar_query,A,A,A,,,
+256,zh-256,i'd like to set a date for this week,我希望定下一个日期.,calendar_set,B,B,B,「定下一个日期」较泛，漏了具体，但意图保留,,this week漏译
+257,zh-257,prepare coffee now,现在准备咖啡,iot_coffee,A,A,A,,,
+258,zh-258,bring me the title of current music,给我带来当前音乐的标题,music_query,A,A,A,,,
+259,zh-259,what's the recipe for fish soup,鱼的食谱是什么?,cooking_recipe,B,B,B,「鱼的食谱」漏了soup，内容略有出入,,fish soup→鱼
+260,zh-260,continue the last chapter of the audio book i was listening to,继续我听到的音频书的最后一章,play_audiobook,B,A,A,「最后一章」可能应为上次停下的地方，略有出入,,
+261,zh-261,how do i make pizza,我怎么做披萨?,cooking_recipe,A,A,A,,,
+262,zh-262,open davinci code audiobook,打开达文西代码音频书,play_audiobook,A,B,A,,,
+263,zh-263,what times are my alarms set for,警报是什么时候设置的,alarm_query,A,B,A,,译文更像询问“警报是什么时候设置的”，而非“警报设在几点响”。,
+264,zh-264,please reserve the next taxi a nine am,请在上午9点预定下一辆出租车,transport_taxi,A,A,A,,,
+265,zh-265,info on this week weather,关于本周的天气信息,weather_query,A,A,A,,,
+266,zh-266,olly cancel all soccer practice alarms,利取消所有的足球练习警报,alarm_remove,B,A,B,「利取消」漏了olly完整，但意图保留,,"'利'误译olly,其余可懂"
+267,zh-267,remind me tomorrow at ten am about the meeting,"提醒我明天早上十点,关于会议.",calendar_set,A,A,A,,,
+268,zh-268,what was george eliot's first november el,乔治·埃利奥特的第一天11月是什么,qa_factoid,C,C,C,「第一天11月」完全不通，意图改变,原文疑似指 first novel，译文变成“第一天11月”，已无法恢复原查询内容。,"译文不通,'第一天11月'无意义"
+269,zh-269,post a new status on facebook saying that i am enjoying the nice weather,"在Facebook上发布一个新状态,说我享受了美好的天气",social_post,A,A,A,,,
+270,zh-270,play the most recent podcast for this american life,播放最新的美国生活播客,play_podcasts,A,B,A,,,

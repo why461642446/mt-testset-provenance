@@ -1,0 +1,13 @@
+run_id,dataset,data_variant,mode,test_lang,train_lang,model,tokenizer,seed,n_train,n_test,num_classes,accuracy,f1_weighted,train_seconds,pretrained,bilstm_mask,params,size_mb,latency_ms_per_sample,peak_gpu_mb
+massive_mt-test_in-language_ko_TextCNN_whitespace_s42,massive,mt-test,in-language,ko,ko,TextCNN,whitespace,42,11514,2974,60,0.335575,0.332474,103.8,,,1130660,4.31,0.1237,
+massive_mt-test_in-language_ko_TextCNN_whitespace_s43,massive,mt-test,in-language,ko,ko,TextCNN,whitespace,43,11514,2974,60,0.33961,0.349534,103.9,,,1130660,4.31,0.1245,
+massive_mt-test_in-language_ko_TextCNN_whitespace_s44,massive,mt-test,in-language,ko,ko,TextCNN,whitespace,44,11514,2974,60,0.322125,0.334569,104.7,,,1130660,4.31,0.1345,
+massive_mt-test_in-language_ko_BiLSTM_whitespace_s42,massive,mt-test,in-language,ko,ko,BiLSTM,whitespace,42,11514,2974,60,0.239744,0.225062,131.9,,0.0,1243240,4.74,0.1513,
+massive_mt-test_in-language_ko_BiLSTM_whitespace_s43,massive,mt-test,in-language,ko,ko,BiLSTM,whitespace,43,11514,2974,60,0.248823,0.244759,130.0,,0.0,1243240,4.74,0.1767,
+massive_mt-test_in-language_ko_BiLSTM_whitespace_s44,massive,mt-test,in-language,ko,ko,BiLSTM,whitespace,44,11514,2974,60,0.127102,0.144745,129.9,,0.0,1243240,4.74,0.1516,
+massive_mt-test_in-language_zh_TextCNN_whitespace_s42,massive,mt-test,in-language,zh,zh,TextCNN,whitespace,42,11514,2974,60,0.054808,0.029919,116.8,,,1138360,4.34,0.1311,
+massive_mt-test_in-language_zh_TextCNN_whitespace_s43,massive,mt-test,in-language,zh,zh,TextCNN,whitespace,43,11514,2974,60,0.053127,0.026835,105.9,,,1138360,4.34,0.1244,
+massive_mt-test_in-language_zh_TextCNN_whitespace_s44,massive,mt-test,in-language,zh,zh,TextCNN,whitespace,44,11514,2974,60,0.055481,0.030954,112.4,,,1138360,4.34,0.1211,
+massive_mt-test_in-language_zh_BiLSTM_whitespace_s42,massive,mt-test,in-language,zh,zh,BiLSTM,whitespace,42,11514,2974,60,0.070276,0.009229,135.3,,0.0,1250940,4.77,0.1452,
+massive_mt-test_in-language_zh_BiLSTM_whitespace_s43,massive,mt-test,in-language,zh,zh,BiLSTM,whitespace,43,11514,2974,60,0.070276,0.009229,121.6,,0.0,1250940,4.77,0.1345,
+massive_mt-test_in-language_zh_BiLSTM_whitespace_s44,massive,mt-test,in-language,zh,zh,BiLSTM,whitespace,44,11514,2974,60,0.070276,0.009229,117.3,,0.0,1250940,4.77,0.1345,
