@@ -1,0 +1,22 @@
+# 含 API key，绝不提交
+*.ipynb
+kaggle_*.ipynb
+colab_*.ipynb
+
+# Kaggle 下载的压缩包
+*.zip
+
+# 论文正文单独投稿
+*.docx
+
+# MASSIVE 原始数据（不可再分发）
+massive/
+massive-1.1.tar.gz
+
+# 备份与内部报告（不进公开仓库）
+*.bak
+*.before_*
+*.before3.bak
+DETACHED*.txt
+__pycache__/
+*.pyc

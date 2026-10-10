@@ -31,7 +31,8 @@ experiment_v2.py —— 面向 SCI 论文的可复现实验框架
 协议与既有工作保持一致：
   - 分类模型 TextCNN 15 epoch / lr 1e-3 / Adam / batch 32
   - BiLSTM      15 epoch / lr 1e-3 / Adam / batch 32
-  - Transformer  3 epoch / lr 2e-5 / AdamW / batch 16 / max_len 128
+  - Transformer  3 epoch / AdamW + warmup 10% + grad-clip 1.0 / batch 16
+                 lr 2e-5（mBERT 等）/ 1e-5（XLMR、XLMR_LARGE）/ max_len 128
   - 全部随机源固定，cudnn.deterministic = True
 """
 
@@ -72,6 +73,8 @@ SPLIT_SEED = 42          # 固定划分，保证不同种子下数据划分一�
 # 第二个 MT 系统的语料目录（--mt-root 可覆盖）。
 # 默认 massive_mt2 = NLLB-3.3B；换谱系实验（如 DeepL）指向别的目录即可。
 MT2_ROOT = os.path.join(ROOT, "massive_mt2")
+# --mt-root 也作用于 mt / mt-test / mt-train（留空则维持旧的默认 massive_mt/）
+MT_ROOT_OVERRIDE = None
 
 ALL_MODELS = ["TextCNN", "BiLSTM", "BERT", "DistilBERT", "ALBERT", "mBERT", "XLMR", "XLMR_LARGE"]
 
@@ -101,18 +104,19 @@ DS = {
                        "zh": "xlm-roberta-large"},
     },
     "massive": {
-        "locale": {"en": "en-US", "ko": "ko-KR", "zh": "zh-CN"},
+        "locale": {"en": "en-US", "ko": "ko-KR", "zh": "zh-CN",
+                   "de": "de-DE", "vi": "vi-VN", "ja": "ja-JP"},
         "bert": {"en": "bert-base-uncased", "ko": "bert-base-multilingual-cased",
-                 "zh": "bert-base-chinese"},
+                 "zh": "bert-base-chinese", "de": "bert-base-multilingual-cased", "vi": "bert-base-multilingual-cased", "ja": "bert-base-multilingual-cased"},
         "distilbert": {"en": "distilbert-base-uncased",
                        "ko": "distilbert-base-multilingual-cased",
-                       "zh": "distilbert-base-multilingual-cased"},
-        "albert": {"en": "albert-base-v2", "ko": "albert-base-v2", "zh": "albert-base-v2"},
+                       "zh": "distilbert-base-multilingual-cased", "de": "distilbert-base-multilingual-cased", "vi": "distilbert-base-multilingual-cased", "ja": "distilbert-base-multilingual-cased"},
+        "albert": {"en": "albert-base-v2", "ko": "albert-base-v2", "zh": "albert-base-v2", "de": "albert-base-v2", "vi": "albert-base-v2", "ja": "albert-base-v2"},
         "mbert": {"en": "bert-base-multilingual-cased", "ko": "bert-base-multilingual-cased",
-                  "zh": "bert-base-multilingual-cased"},
-        "xlmr": {"en": "xlm-roberta-base", "ko": "xlm-roberta-base", "zh": "xlm-roberta-base"},
+                  "zh": "bert-base-multilingual-cased", "de": "bert-base-multilingual-cased", "vi": "bert-base-multilingual-cased", "ja": "bert-base-multilingual-cased"},
+        "xlmr": {"en": "xlm-roberta-base", "ko": "xlm-roberta-base", "zh": "xlm-roberta-base", "de": "xlm-roberta-base", "vi": "xlm-roberta-base", "ja": "xlm-roberta-base"},
         "xlmr_large": {"en": "xlm-roberta-large", "ko": "xlm-roberta-large",
-                       "zh": "xlm-roberta-large"},
+                       "zh": "xlm-roberta-large", "de": "xlm-roberta-large", "vi": "xlm-roberta-large", "ja": "xlm-roberta-large"},
     },
 }
 
@@ -138,10 +142,12 @@ def file_md5(path):
     return h.hexdigest()
 
 
-def run_id_of(dataset, variant, mode, lang, model, tok, seed, bilstm_mask=False):
+def run_id_of(dataset, variant, mode, lang, model, tok, seed, bilstm_mask=False, bilstm_readout=None):
     """统一的 run_id 生成器 —— 必须把 bilstm_mask 编进去，
     否则加了掩码的 BiLSTM 会和未加掩码的视为同一组合而被断点续跑跳过。"""
     m = "_mask" if (model == "BiLSTM" and bilstm_mask) else ""
+    if model == "BiLSTM" and bilstm_readout and bilstm_readout not in ("last", "lastmasked"):
+        m = "_" + bilstm_readout
     return f"{dataset}_{variant}_{mode}_{lang}_{model}_{tok}{m}_s{seed}"
 
 
@@ -205,7 +211,8 @@ def load_data(dataset, lang, data_variant="auto"):
         if v == "localized":
             tr_t, tr_y, te_t, te_y = ltr_t, ltr_y, lte_t, lte_y
         else:
-            mtr_t, mtr_y, mte_t, mte_y = load_massive(lang, "mt")
+            mtr_t, mtr_y, mte_t, mte_y = load_massive(lang, "mt",
+                                               root=globals().get("MT_ROOT_OVERRIDE"))
             if v == "mt":
                 # E4b：机翻训练 + 机翻测试（分布内，同一 MT 系统）
                 tr_t, tr_y, te_t, te_y = mtr_t, mtr_y, mte_t, mte_y
@@ -284,27 +291,55 @@ class TextCNN(nn.Module):
 
 
 class BiLSTM(nn.Module):
-    """use_mask=True 时取"最后一个非 PAD 时间步"，修正后置 padding 的缺陷"""
+    """三种读出方式。
 
-    def __init__(self, vocab_size, embedding_dim, hidden_dim, num_classes, use_mask=False):
+    readout='last'      : 取最后一个时间步（未修正 —— 该位置几乎总是 PAD）
+    readout='lastmasked': 取最后一个非 PAD 时间步，事后乘掩码
+        **注意其残留缺陷**：双向输出在该位置拼接了前向与反向两半。
+        前向半边已处理 0..t，概括整句；但反向半边是从序列末尾（PAD）倒着走的，
+        到 t 时只经过了最后一个真实 token 及其后的全部 PAD，**其状态被 PAD 污染**，
+        事后乘掩码无法挽回已经算过的 PAD。
+    readout='packed'    : 用 pack_padded_sequence，LSTM 完全不接触 PAD，
+        再取最后一个非 PAD 时间步。修正上述污染。
+    readout='bothfinal' : 取两个方向的最终隐状态拼接。前向最终态在最后一个真实 token，
+        反向最终态在第一个真实 token，**两半都概括整句**。
+    """
+
+    def __init__(self, vocab_size, embedding_dim, hidden_dim, num_classes,
+                 use_mask=False, readout=None):
         super().__init__()
         self.embedding = nn.Embedding(vocab_size, embedding_dim, padding_idx=0)
         self.lstm = nn.LSTM(embedding_dim, hidden_dim, batch_first=True, bidirectional=True)
         self.dropout = nn.Dropout(0.5)
         self.fc = nn.Linear(hidden_dim * 2, num_classes)
         self.use_mask = use_mask
+        # 兼容旧参数：use_mask=True 且未指定 readout 时沿用 'lastmasked'
+        self.readout = readout if readout else ("lastmasked" if use_mask else "last")
 
     def forward(self, x):
-        out, _ = self.lstm(self.embedding(x))
-        if self.use_mask:
-            keep = (x != 0)
-            lengths = keep.sum(1).clamp(min=1) - 1
-            masked = out * keep.unsqueeze(-1).float()
-            idx = lengths.view(-1, 1, 1).expand(-1, 1, out.size(2))
-            x = masked.gather(1, idx).squeeze(1)
+        emb = self.embedding(x)
+        keep = (x != 0)
+        lengths = keep.sum(1).clamp(min=1)
+        if self.readout == "packed":
+            packed = nn.utils.rnn.pack_padded_sequence(
+                emb, lengths.cpu(), batch_first=True, enforce_sorted=False)
+            out, _ = self.lstm(packed)
+            out, _ = nn.utils.rnn.pad_packed_sequence(
+                out, batch_first=True, total_length=x.size(1))
+            idx = (lengths - 1).view(-1, 1, 1).expand(-1, 1, out.size(2))
+            h = out.gather(1, idx).squeeze(1)
+        elif self.readout == "bothfinal":
+            _, (hn, _) = self.lstm(emb)
+            h = torch.cat([hn[0], hn[1]], dim=1)      # 前向末态、反向末态
         else:
-            x = out[:, -1, :]
-        return self.fc(self.dropout(x))
+            out, _ = self.lstm(emb)
+            if self.readout == "lastmasked":
+                m = out * keep.unsqueeze(-1).float()
+                idx = (lengths - 1).view(-1, 1, 1).expand(-1, 1, out.size(2))
+                h = m.gather(1, idx).squeeze(1)
+            else:
+                h = out[:, -1, :]
+        return self.fc(self.dropout(h))
 
 
 class SeqDataset(Dataset):
@@ -389,21 +424,36 @@ def train_classic(model, tr_loader, te_loader, epochs, lr, name, device, seed, n
             preds, golds)
 
 
-def train_transformer(model, tr_loader, te_loader, epochs, lr, name, device, seed, num_classes):
+def train_transformer(model, tr_loader, te_loader, epochs, lr, name, device, seed, num_classes,
+                      warmup_frac=0.1, grad_clip=1.0, weight_decay=0.01):
+    """线性 warmup + 梯度裁剪 + weight decay。
+
+    大模型在 11.5k 样本上以恒定 lr 微调时会间歇性塌进多数类盆地
+    （XLMR-LARGE 上实测约半数种子停在 7% 准确率），这三项是标准补救。
+    """
     model = model.to(device)
-    opt = optim.AdamW(model.parameters(), lr=lr)
+    opt = optim.AdamW(model.parameters(), lr=lr, weight_decay=weight_decay)
+    total_steps = max(1, epochs * len(tr_loader))
+    warmup_steps = max(1, int(warmup_frac * total_steps))
+    step = 0
     hist = []
     for ep in range(1, epochs + 1):
         model.train()
         tot = 0.0
         for b in tr_loader:
+            cur_lr = lr * (step + 1) / warmup_steps if step < warmup_steps else lr
+            for g in opt.param_groups:
+                g["lr"] = cur_lr
             ids = b["input_ids"].to(device)
             am = b["attention_mask"].to(device)
             yb = b["label"].to(device)
             opt.zero_grad()
             loss = model(input_ids=ids, attention_mask=am, labels=yb).loss
             loss.backward()
+            if grad_clip:
+                torch.nn.utils.clip_grad_norm_(model.parameters(), grad_clip)
             opt.step()
+            step += 1
             tot += loss.item()
         preds, golds = eval_transformer(model, te_loader, device)
         acc = accuracy_score(golds, preds)
@@ -528,7 +578,9 @@ def run_once(cfg, device, args, outdir):
         if model_name == "TextCNN":
             model = TextCNN(len(vocab), 100, num_classes)
         else:
-            model = BiLSTM(len(vocab), 100, 128, num_classes, use_mask=args.bilstm_mask)
+            model = BiLSTM(len(vocab), 100, 128, num_classes,
+                           use_mask=args.bilstm_mask,
+                           readout=getattr(args, 'bilstm_readout', None))
         acc, f1, cm, hist, preds, golds = train_classic(
             model, tr_loader, te_loader,
             args.epochs_classic, 1e-3, model_name,
@@ -546,11 +598,16 @@ def run_once(cfg, device, args, outdir):
             EncDataset(e_te["input_ids"], e_te["attention_mask"], yte), 16, False, seed)
         model = AutoModelForSequenceClassification.from_pretrained(
             pretrained, num_labels=num_classes)
+        # 大模型用小学习率 —— XLMR-LARGE(560M) 在 2e-5 下会塌成多数类
+        lr_use = (args.lr_transformer_large
+                  if model_name in ("XLMR_LARGE", "XLMR")
+                  else args.lr_transformer)
         acc, f1, cm, hist, preds, golds = train_transformer(
             model, tr_loader, te_loader,
-            args.epochs_transformer, 2e-5,
+            args.epochs_transformer, lr_use,
             f"{model_name}({pretrained})", device, seed,
-            num_classes)
+            num_classes,
+            warmup_frac=args.warmup_frac, grad_clip=args.grad_clip)
         pretrained = pretrained
     secs = round(time.time() - t0, 1)
 
@@ -657,6 +714,8 @@ def main():
                          "留空则用 <项目根>/massive_mt2；换谱系实验时指向别的目录。")
     ap.add_argument("--outdir", default="runs_v2")
     ap.add_argument("--bilstm-mask", action="store_true")
+    ap.add_argument("--bilstm-readout", default=None,
+                    choices=[None, "last", "lastmasked", "packed", "bothfinal"])
     ap.add_argument("--bert-max-len", type=int, default=0,
                     help="覆盖 BERT 类模型的截断长度（默认 128）。用于消除"
                          "「英语字符级平均 34.9 字符 > 30」的截断混淆：设为 64 即不截断。")
@@ -665,6 +724,10 @@ def main():
     ap.add_argument("--limit", type=int, default=0, help="每类抽样条数，用于自检")
     ap.add_argument("--epochs-classic", type=int, default=15)
     ap.add_argument("--epochs-transformer", type=int, default=3)
+    ap.add_argument("--lr-transformer", type=float, default=2e-5)
+    ap.add_argument("--lr-transformer-large", type=float, default=1e-5)
+    ap.add_argument("--warmup-frac", type=float, default=0.1)
+    ap.add_argument("--grad-clip", type=float, default=1.0)
     ap.add_argument("--analyze", action="store_true", help="只做汇总，不训练")
     ap.add_argument("--save-predictions", action="store_true",
                     help="逐条保存测试集预测（pred_<run_id>.csv），供配对检验使用")
@@ -682,6 +745,10 @@ def main():
         print(f"[覆盖] SEQ_LEN = {SEQ_LEN}")
     if args.mt_root:
         MT2_ROOT = args.mt_root if os.path.isabs(args.mt_root) else os.path.join(ROOT, args.mt_root)
+    if args.mt_root:
+        MT_ROOT_OVERRIDE = args.mt_root if os.path.isabs(args.mt_root) else os.path.join(ROOT, args.mt_root)
+        globals()["MT_ROOT_OVERRIDE"] = MT_ROOT_OVERRIDE
+        print(f"MT 语料根目录：{MT_ROOT_OVERRIDE}  (--mt-root 作用于 mt / mt-test / mt-train)")
         if not os.path.isdir(MT2_ROOT):
             raise SystemExit(f"[FAIL] --mt-root 不存在: {MT2_ROOT}")
         print(f"[覆盖] MT2_ROOT = {MT2_ROOT}")
@@ -726,7 +793,7 @@ def main():
     elif args.dataset == "snips":
         variant = "original" if args.data == "original" else "corrected"
     else:
-        variant = args.data if args.data in ("mt", "mt-test", "mt-train", "mt2") else "localized"
+        variant = args.data if args.data in ("mt", "mt-test", "mt-train", "mt2", "mt2-test") else "localized"
 
     jobs = []
     for lang in langs:
@@ -734,7 +801,7 @@ def main():
             for tok in ([args.tokenizer] if model in ("TextCNN", "BiLSTM") else ["subword"]):
                 for seed in seeds:
                     rid = run_id_of(args.dataset, variant, args.mode, lang, model, tok,
-                                    seed, args.bilstm_mask)
+                                    seed, args.bilstm_mask, getattr(args, 'bilstm_readout', None))
                     if rid in done:
                         continue
                     jobs.append({"dataset": args.dataset, "mode": args.mode, "lang": lang,
@@ -754,6 +821,7 @@ def main():
                              "numpy": np.__version__, "pandas": pd.__version__}}
 
     rows = []
+    job_failures = []
     for i, cfg in enumerate(jobs, 1):
         print(f"\n[{i}/{len(jobs)}]", flush=True)
         try:
@@ -762,6 +830,7 @@ def main():
             print(f"  !!! 该组合失败：{type(e).__name__}: {e}", flush=True)
             import traceback
             traceback.print_exc()
+            job_failures.append({"config": cfg, "error": f"{type(e).__name__}: {e}"})
         # 每个组合后立即写盘 —— Colab 断线也不丢进度
         if rows:
             df = pd.DataFrame(rows)
@@ -769,6 +838,14 @@ def main():
                 df = pd.concat([pd.read_csv(res_path), df], ignore_index=True)
             df.to_csv(res_path, index=False)
             rows = []
+
+    if job_failures:
+        manifest["failures"] = job_failures
+        manifest["finished_at"] = datetime.now().isoformat(timespec="seconds")
+        with open(os.path.join(outdir, "manifest_v2.json"), "w", encoding="utf-8") as f:
+            json.dump(manifest, f, ensure_ascii=False, indent=2)
+        raise SystemExit(
+            "[FAIL] 有 %d 个组合失败；已保留成功结果，可修复后断点续跑。" % len(job_failures))
 
     manifest["finished_at"] = datetime.now().isoformat(timespec="seconds")
     with open(os.path.join(outdir, "manifest_v2.json"), "w", encoding="utf-8") as f:

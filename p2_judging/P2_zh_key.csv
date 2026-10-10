@@ -1,0 +1,271 @@
+order,item_id,group,src_id,is_flip,intent_label,english_source,localized_text,target_text
+1,zh-001,uniform,17156,0,email_query,check my email for any new email from joe,检查李雷发给我的任何新电子邮件,查看我的电子邮件查看来自乔的任何新电子邮件
+2,zh-002,uniform,9225,0,play_radio,can you turn on the radio,你能打开电台吗,你能点电台吗?
+3,zh-003,uniform,3099,0,news_query,show me some current events,给我看一些时事,给我看一些当前事件
+4,zh-004,uniform,6288,0,general_quirky,i had food as soon as i got up,我一起床就吃东西了,我起床后吃了东西
+5,zh-005,repeat_of_64,4544,0,takeaway_order,order a twelve piece honey mustard wing combo with seasonimg altnon the fries and a sprite as the drink,点一份十二片的蜂蜜芥末鸡翅组合配时令薯条和一杯雪碧,"订购12块的蜜果翼组合,用果和子作为饮料."
+6,zh-006,uniform,13546,0,qa_factoid,what was the last movie will smith was in,黄渤最后参演的电影是什么,威尔斯·史密斯的最后一部电影是什么?
+7,zh-007,uniform,11802,0,recommendation_locations,are there any good pizza places around here,这附近有什么好吃的披萨餐厅吗,这里有没有好吃的披萨店吗?
+8,zh-008,repeat_of_132,9353,0,play_radio,start some music play the radio,打开收音机播放一些音乐,开始一些音乐播放广播
+9,zh-009,uniform,16052,1,email_query,check outlook,检查网易邮箱,检查前景
+10,zh-010,repeat_of_222,15661,0,social_post,post my latest entry to twitter at n.s.a.,在国家安全局的推特上发布我的最新记录,在NSA上发布我最新的帖子
+11,zh-011,uniform,15904,0,email_query,check my new emails and tell me what are they about,查看我的新电子邮件并告诉我他们是关于什么的,"查看我的新电子邮件,告诉我它们是什么."
+12,zh-012,uniform,1160,0,weather_query,how cold will it get each night this week,这周每晚都有多冷啊,这周每天晚上会有多冷
+13,zh-013,uniform,13165,1,qa_definition,what does oscillate mean,震荡是什么意思,振荡意味着什么?
+14,zh-014,uniform,3539,1,play_music,please play shake it off by taylor swiftm,请播放周杰伦的一路向北,"请玩""摇它"" 泰勒·斯威夫特"
+15,zh-015,uniform,9577,1,play_radio,change the station to eighty two point four,换成八十二点四电台,换站到八十二点四
+16,zh-016,uniform,5427,0,datetime_query,what is the time in canada now,加拿大现在是几点钟,现在加拿大时间是多少?
+17,zh-017,uniform,10927,0,lists_query,let me hear my list,让我听到我的清单,让我听到我的名单
+18,zh-018,uniform,3401,0,play_music,play the most popular elton john song,播放陶喆最热门的歌曲,播放最受欢迎的埃尔顿约翰歌曲
+19,zh-019,uniform,14457,0,qa_factoid,find route,寻找路线,找到路线
+20,zh-020,uniform,7262,0,calendar_set,create a notification reminder for meeting tomorrow,为明天的会议创建一个通知提醒,创建一个通知提醒明天的会议
+21,zh-021,uniform,712,0,news_query,i want to hear the last news from c. n. n.,我想听听中国新闻网的最新消息,我想听到CNN的最新消息.
+22,zh-022,uniform,585,0,news_query,show latest news,显示最新消息,显示最新新闻
+23,zh-023,uniform,9103,0,calendar_query,is there a meeting on my calendar this afternoon,今天下午我的日历有会议吗,"今天下午,我有没有会议?"
+24,zh-024,uniform,5026,1,iot_hue_lightchange,please make the lights natural,使灯光变得自然,请让灯光自然.
+25,zh-025,uniform,10226,1,cooking_recipe,let me know the recipe for preparing pasta,让我知道做意大利面的食谱,让我知道食的配方
+26,zh-026,uniform,8948,0,calendar_set,add event for meeting with james,增加和李雷会面活动,加入与詹姆斯的会议活动
+27,zh-027,uniform,9301,0,play_radio,play an f. m.,播放等你爱我,打一个F.M.
+28,zh-028,uniform,16719,0,email_query,let me know any new emails i've received,让我知道已经收到的邮件里有没有任何新的电子邮件,让我知道我收到的任何新电子邮件
+29,zh-029,uniform,4058,0,play_music,i would like to hear some rap music,我想听一些摇滚音乐,我想听一些拉普音乐
+30,zh-030,uniform,7916,0,calendar_set,remind me to take out the garbage at six p. m.,提醒我在下午六点倒垃圾,提醒我在晚上六点拿出垃圾.
+31,zh-031,uniform,1862,1,alarm_query,when does my alarm go off,我的闹钟什么时候响啊,什么时候我的警报会响起
+32,zh-032,uniform,11744,1,recommendation_movies,olly what are new drama movies opening this weekend,奥莉，这周末有什么新的剧情电影,"艾莉,今周末开幕的新剧情电影是什么?"
+33,zh-033,uniform,11266,0,play_podcasts,play a podcast from my library,从我的音乐库播放一段播客,从我的图书馆播放一个播客
+34,zh-034,repeat_of_240,16518,0,email_sendemail,add a new email for julie smith,为郑小美添加一个新电子邮件,给朱莉史密斯添加一个新的电子邮件
+35,zh-035,uniform,4319,0,alarm_set,i need to get up at ten tomorrow,我需要明天十点起床,我需要早上10点起床.
+36,zh-036,uniform,13900,0,qa_definition,the definition of life,生命的定义,生命的定义
+37,zh-037,uniform,1043,1,takeaway_order,call the nearest thai restaurant with delivery,打电话给最近的做外送的泰国餐厅,"联系最接近的泰国餐厅,"
+38,zh-038,uniform,3460,1,audio_volume_mute,quiet time,安静时间,静静的时间
+39,zh-039,uniform,15467,0,social_post,tell comcast i hate them,告诉浙江卫视我讨厌他们,"告诉康卡斯,我讨厌他们."
+40,zh-040,uniform,11340,0,play_podcasts,does allearsnet have a new podcast,杨洋有新的播客吗,艾尔尔斯网有没有新的播客
+41,zh-041,uniform,3127,0,general_quirky,how many tornadoes have there been this month,这个月有几个台风,这个月有多少次风
+42,zh-042,uniform,16170,0,email_query,open inbox to check unread mails,打开收件箱检查未读邮件,打开收件箱查看未读的邮件
+43,zh-043,uniform,174,0,alarm_set,set wake up thursday seven am,定个起床闹钟星期四七点,设置星期四早上7点起床
+44,zh-044,repeat_of_101,7117,1,calendar_remove,get rid of the events on the nineteenth from my calendar,从我的日历中删除十九日的活动,摆脱我的日历的十九日事件
+45,zh-045,uniform,10263,0,play_game,open chess app and begin game,打开国际象棋应用程序并开始游戏,"打开棋牌应用程序,开始游戏"
+46,zh-046,uniform,14179,0,qa_factoid,how far is canada from my current location,加拿大离我现在的位置有多远,"距离我现在的位置有多远,加拿大"
+47,zh-047,uniform,6997,0,calendar_remove,remove succeeding event,已完成活动,删除后续事件
+48,zh-048,uniform,12618,0,transport_query,how much is a round trip train ticket to go to new york,去纽约的往返火车票多少钱,一次往返到纽约的火车票多少钱
+49,zh-049,repeat_of_195,14071,0,general_quirky,tell me what i wore yesterday,告诉我我昨天穿了什么,告诉我昨天我穿什么
+50,zh-050,uniform,15271,1,social_post,post this to my facebook l. o. l.,把这个发布到我的微博上,发到我的Facebook上.
+51,zh-051,uniform,5573,0,iot_hue_lightup,please set the brightness of lightness appropriately in kitchen,请在厨房中适当设置适当的亮度,请在厨房中适当设置轻度的亮度
+52,zh-052,uniform,15359,0,social_post,open tweet to apple that my iphone's battery is always drained,打开微博发给华为说我的手机电池总是没电,开封推文给果说我的iPhone电池总是耗尽
+53,zh-053,uniform,6713,0,calendar_remove,cancel business meeting on wednesday,取消周三的商务会议,取消周三的商务会议
+54,zh-054,uniform,680,0,news_query,keep me informed about bitcoin price,告訴我沪深股市的最新价格,让我知道比特币价格
+55,zh-055,uniform,5902,1,alarm_query,check if alarm is set for six am,检查上午六点的闹钟定了没有,检查是否设置警报时间为早上6点
+56,zh-056,uniform,2798,0,play_music,alexa play song over the rainbow,alexa 播放歌曲可惜没如果,亚历克萨在彩虹上演奏歌曲
+57,zh-057,uniform,15785,0,email_query,is there anything new in my mailbox,我的邮箱里有新邮件吗,在我的邮箱里有什么新东西吗?
+58,zh-058,uniform,14917,0,qa_factoid,when's mark lanegan's next album out,汪峰的下张专辑什么时候出,马克·莱尼根下一个专辑什么时候出炉?
+59,zh-059,uniform,4638,0,audio_volume_other,change volume settings in the negative alexa,改变音量设置到负数,在负 alexa 中改变音量设置
+60,zh-060,uniform,2908,1,takeaway_query,tell me if taco bell delivers,告诉我梅江饭店送不送外卖,"告诉我,如果塔科贝尔交付"
+61,zh-061,uniform,1607,0,datetime_query,tell me current time in los angels,告诉我成都现在的时间,告诉我洛杉矶的时间
+62,zh-062,uniform,8867,1,alarm_set,olly set alarm for reminder,olly 设个闹钟提醒,"为了提醒,安装了警报"
+63,zh-063,uniform,4248,0,iot_hue_lightchange,house lights blue,把房子的灯改为蓝色,房子灯蓝色
+64,zh-064,uniform,1904,0,news_query,get me match highlights,给我找些赛事集锦,给我一个匹配的亮点
+65,zh-065,uniform,4216,0,general_joke,tell me the funniest joke that was ever told,告诉我有史以来最好笑的笑话,告诉我有史以来最有趣的笑话
+66,zh-066,uniform,10718,0,lists_remove,can you remove this item from the list,你能把这个项目从清单上删除吗,您可以从列表中删除这个项目吗?
+67,zh-067,uniform,4376,0,weather_query,how is it outside today,今天外面天咋样,今天外面怎么样
+68,zh-068,uniform,16178,0,email_query,any mail from amazon today,今天来自 amazon 的任何邮件,今天从亚马逊发出任何邮件
+69,zh-069,uniform,6014,0,music_query,what artist is this,这歌手是誰,这位艺术家是什么?
+70,zh-070,uniform,6485,0,general_quirky,what i like today,我今天喜欢的,今天我喜欢的
+71,zh-071,uniform,16225,0,email_addcontact,open contacts,打开通讯录,开放的联系
+72,zh-072,uniform,3993,0,iot_hue_lightoff,can you make the lights go out,你能把灯灭了吗,你能让灯光灭吗?
+73,zh-073,uniform,12532,0,transport_query,lead the way to the place,导航去那个地方,带领我们去那个地方
+74,zh-074,uniform,1509,0,audio_volume_mute,do not make any noise until morning alarm,起床闹钟之前不要任何声音,在早晨起钟之前不要做任何噪音
+75,zh-075,repeat_of_247,17098,0,email_query,show me any emails received in the last hour,显示给我过去的一小时收到的任何电子邮件,给我看过去一小时收到的任何电子邮件
+76,zh-076,repeat_of_24,1784,0,iot_hue_lightoff,turn off the dining room,关掉饭厅,关掉餐厅
+77,zh-077,uniform,1715,1,audio_volume_down,lower volume by fifty percent,音量降低五成,低于50%的体积
+78,zh-078,uniform,14794,0,qa_factoid,what is elvis favorite ride,什么是猫王最喜欢的骑行,埃尔维斯最喜欢的骑车是什么?
+79,zh-079,uniform,2927,1,datetime_query,what time is it in austin,现在奥斯汀几点,澳斯是什么时候
+80,zh-080,uniform,15092,0,qa_definition,find a description about a samsung t. v.,查找有关三星电视的说明,找一个关于三星电脑的描述.
+81,zh-081,uniform,14787,0,qa_factoid,what is the difference between roman and grigorean calendar,罗马历和格里高利历有什么区别,罗马和格里戈里历的区别是什么?
+82,zh-082,uniform,14214,0,transport_query,find the ways of travel for the same,找到同样的旅行方式,"找到旅行方式,"
+83,zh-083,uniform,2868,0,iot_coffee,please get the coffee machine to make me some coffee,请用咖啡机给我磨一些咖啡,请把咖啡机给我做一些咖啡
+84,zh-084,uniform,13035,0,qa_maths,what is two hundred divided by ten,二百除以十等于多少,两百分之十是什么?
+85,zh-085,uniform,2030,0,music_query,current song playing what is it,当前的歌曲播放是什么,现在的歌曲是什么
+86,zh-086,uniform,9124,0,calendar_set,show me the events in my work calendar for next week,显示给我下周我的工作日程安排,给我看下周的工作日程中的事件
+87,zh-087,uniform,10756,0,lists_remove,clear out the shopping list,清理购物清单,清除购物清单
+88,zh-088,uniform,4966,0,iot_wemo_off,hello i want to turn off my wemo plug,你好我想关闭我的小米插头,"您好,我想关掉我的微电插头."
+89,zh-089,uniform,14449,0,qa_factoid,does pink have a new baby,刘亦菲有一个新生儿吗,粉红有没有新生儿
+90,zh-090,uniform,2166,1,alarm_set,set an alarm for tomorrow at six in the morning,设个明天早上六点的闹钟,设置明天早上六点的警报
+91,zh-091,uniform,14453,0,qa_currency,exchange rate of euro with dollar,欧元对美元的汇率,欧元美元汇率
+92,zh-092,uniform,15345,1,social_query,please check the trending topics on twitter,查看微博热搜,请查看Twitter上的流行话题
+93,zh-093,uniform,15983,0,email_querycontact,what is the email address for tessa,梅梅的电子邮箱地址是什么,泰萨的电子邮件地址是什么?
+94,zh-094,uniform,5278,0,play_music,please play only music of pop mix,请只播放流行混音音乐,请只播放流行音乐
+95,zh-095,uniform,16222,1,email_querycontact,tell me about mary s.,告诉我关于郑小美的信息,告诉我关于玛丽斯.
+96,zh-096,uniform,13404,0,general_quirky,what store is having sales tomorrow,明天有哪家店打折,明天有什么商店会卖
+97,zh-097,uniform,9216,1,play_radio,play my station,播放我的电台,玩我的站点
+98,zh-098,uniform,4121,1,alarm_query,what time have you set the alarm,闹钟设在了几点啊,你在什么时候设置警报?
+99,zh-099,uniform,7287,0,calendar_set,remind me about my anniversary in one day advance,提前一天提醒我我的周年纪念日,一天前提醒我我的周年纪念日
+100,zh-100,uniform,10214,0,cooking_recipe,recipes that can be cooked in an hour,一小时内能完成的食谱,几种可以在一个小时内做的食谱
+101,zh-101,uniform,15166,0,social_post,post my business on twitter,把我的业务发到微博上,在Twitter上发布我的业务
+102,zh-102,uniform,14138,0,qa_definition,please tell me what is the definition of cylinder,请告诉我圆柱的定义是什么,请告诉我筒的定义是什么?
+103,zh-103,uniform,6159,1,iot_cleaning,clean the floor,清洁地板,清理地板
+104,zh-104,uniform,10335,0,play_game,olly play poker with me,与我扑克,艾莉和我一起玩克
+105,zh-105,uniform,12254,0,transport_traffic,tell me about city traffic,告诉我城市交通怎样,告诉我城市交通
+106,zh-106,uniform,15839,0,email_query,topic,题目,问题
+107,zh-107,repeat_of_234,16178,0,email_query,any mail from amazon today,今天来自 amazon 的任何邮件,今天从亚马逊发出任何邮件
+108,zh-108,uniform,17042,0,email_sendemail,write an email for john at gmail dot com,写一封新电子邮件给 john at gmail dot com,给约翰写电子邮件在Gmail点com
+109,zh-109,uniform,6652,0,general_quirky,sticking to diet,坚持节食,坚持饮食
+110,zh-110,uniform,366,0,news_query,please tell me the latest news,请告诉我最新消息,请告诉我最新的新闻
+111,zh-111,uniform,12526,0,transport_query,what is the fastest way to get to starbucks,去星巴克最快的方法是什么,什么是最快的方法去星巴克
+112,zh-112,uniform,5051,1,alarm_set,make a new alarm,定个新的闹钟,打一个新的警报
+113,zh-113,uniform,5627,0,play_music,play for me music by the beatles,为我播放披头士的音乐,给我播放比特尔队的音乐
+114,zh-114,uniform,1511,0,iot_hue_lightchange,show me the available colors of lights,显示可用的灯光颜色,给我看看灯的颜色
+115,zh-115,repeat_of_177,12618,0,transport_query,how much is a round trip train ticket to go to new york,去纽约的往返火车票多少钱,一次往返到纽约的火车票多少钱
+116,zh-116,uniform,13524,0,general_quirky,i would like it to help analyze ideas,我想让它帮助分析想法,我希望它能帮助分析想法
+117,zh-117,uniform,9620,0,play_radio,can i get delilah on the radio in the bedroom,我可以在卧室的收音机里听到黛利拉吗,我可以在卧室里收音机上听戴丽拉吗?
+118,zh-118,repeat_of_85,5902,1,alarm_query,check if alarm is set for six am,检查上午六点的闹钟定了没有,检查是否设置警报时间为早上6点
+119,zh-119,uniform,2146,1,datetime_query,what's the date of the winter solstice two years from now,两年后的冬至是几月几号,冬日变化的日期是什么?
+120,zh-120,uniform,494,0,general_joke,what's a good joke,有什么好听的笑话,什么是个好笑话
+121,zh-121,uniform,7520,0,calendar_set,remind me everyday at two p. m. for lunch,每天下午两点钟提醒我吃午餐,每天晚上两点就提醒我吃午饭
+122,zh-122,uniform,12306,0,transport_ticket,book a first class ticket in the next train to miami,订一张去上海的一等座的火车票,在下一列列车上预订一班票前往迈阿密
+123,zh-123,uniform,11476,0,play_podcasts,play the previous podcast,播放上一个播客,播放之前的播客
+124,zh-124,uniform,12908,0,transport_query,what time does the train arrive in sacremento,火车什么时候到达萨克门托,列车到达萨克里门托什么时候
+125,zh-125,uniform,16098,0,email_query,check unread emails from amy,查看来自小美的电子邮件,查看艾米的未读的电子邮件
+126,zh-126,uniform,6850,0,calendar_query,list out my schedule today,列出我的今天的日程安排,列出我今天的时间表
+127,zh-127,uniform,14646,0,transport_ticket,tell me about the cheapest flight fares to nj today,告诉我今天到新泽西州最便宜的机票价格,告诉我今天最便宜的飞行票
+128,zh-128,uniform,16880,1,email_sendemail,email jerry regarding the meeting,关于会议发邮件给家明,关于会议的电子邮件
+129,zh-129,uniform,13197,0,general_quirky,i wish it could give me advice,我希望它能给我建议,我希望它能给我一个建议
+130,zh-130,uniform,4838,0,play_music,play all music by billy joel,播放林俊杰的所有音乐,播放所有音乐的比利乔尔
+131,zh-131,uniform,13215,0,transport_query,what is the quickest way to my work downtown without hitting any traffic,到市中心上班而不堵车最快的方法是什么,"什么是最快的方法去我的工作中心,没有碰到任何交通"
+132,zh-132,repeat_of_127,9124,0,calendar_set,show me the events in my work calendar for next week,显示给我下周我的工作日程安排,给我看下周的工作日程中的事件
+133,zh-133,uniform,1655,0,weather_query,will it snow tomorrow at noon,明天中午会下雪吗,明天下午会有雪吗?
+134,zh-134,uniform,7168,0,general_quirky,can you give me the details of upcoming annual function on twenty sixth march,告诉我每年三月二十六日举办的方程式比赛的细节,你能给我讲下20月6日的年度活动的细节吗?
+135,zh-135,uniform,2309,0,datetime_convert,it is seven am in pacific standard time,中国标准时间现在是上午七点,现在是太平洋标准时间上午7点.
+136,zh-136,uniform,7542,0,calendar_set,please remind me about this tomorrow,明天提醒我这件事,请提醒我明天
+137,zh-137,uniform,3096,0,weather_query,how's the weather like in new jersey,四川的天气怎么样,纽约泽西的天气是什么样子
+138,zh-138,uniform,5671,1,datetime_query,what is the time in las vegas,拉斯维加斯现在几点,拉斯维加斯有什么时间?
+139,zh-139,uniform,14118,0,qa_factoid,show geographic details of pyramids,显示金字塔的详细地理位置,显示金字塔的地理细节
+140,zh-140,uniform,1542,0,weather_query,the sun is shinning bright will we have this weather for the rest of the day,太阳好晒啊今天一天都这样吗,"太阳正在闪耀,我们会在余下的天气."
+141,zh-141,uniform,14272,0,qa_definition,hey what's a book,嘿什么是书,",什么是书"
+142,zh-142,uniform,2704,0,play_music,let's hear some indie rock okay,让我们听一些独立摇滚吧,让我们听一些独立摇滚吧
+143,zh-143,uniform,6083,1,alarm_set,create an alarm for today at ten am,创建个今天上午十点的闹钟,打造一个今天早上10点的警报
+144,zh-144,uniform,1084,0,news_query,user friendly,方便使用的,适合用户
+145,zh-145,uniform,2414,0,takeaway_order,i want to order a pizza from michael's pizza,我想点一个迈克尔披萨店的披萨,我想要从迈克尔的披萨订购披萨.
+146,zh-146,uniform,9871,0,play_audiobook,play my favorite book,播放我最喜欢的书,玩我最喜欢的书
+147,zh-147,uniform,16061,0,email_query,have i received any emails in the last ten minutes,过去十分钟我有收到新邮件吗,"在过去的10分钟里,我是否收到任何电子邮件?"
+148,zh-148,uniform,15732,1,social_post,tweet samsung and tell them to stop killing people with their products,私信腾讯说停止用他们的产品杀人,"推文给三星说,不要用他们的产品杀人人"
+149,zh-149,uniform,5165,0,iot_hue_lightdim,lower the intensity of light,减少灯光,降低光强度
+150,zh-150,uniform,5279,0,play_music,please play only sad song in music player,请在音乐播放器中只播放悲伤的歌曲,请在音乐播放器中播放只有悲伤的歌曲
+151,zh-151,uniform,1719,1,alarm_set,set alarm of only monday morning six am,定个闹钟仅在周一的上午六点,只有星期一早上六点的警报
+152,zh-152,uniform,16029,0,email_sendemail,please compose a new email to coworker,请给同事写一封新的电子邮件,请给同事写一个新的电子邮件
+153,zh-153,uniform,12256,0,transport_traffic,how is the traffic presently near central park road,当前附近前进大街,现在中央公园公路附近的交通状况如何
+154,zh-154,uniform,761,1,music_query,i want to know about this song,我想了解这首歌,我想知道这个歌曲
+155,zh-155,uniform,14473,0,qa_stock,open stock price for name,打开谷歌的股票价格,开放股票价格
+156,zh-156,uniform,15661,0,social_post,post my latest entry to twitter at n.s.a.,在国家安全局的推特上发布我的最新记录,在NSA上发布我最新的帖子
+157,zh-157,uniform,254,0,play_music,olly play a good track from my favorite jazz player,olly 播放一首我的最喜爱的爵士乐手的曲子,艾莉演奏了我最喜欢的爵士乐手的好曲子
+158,zh-158,uniform,16989,0,email_sendemail,please say to the email that sent me george i need the money now it's urgent,请在发给陈大文的电子邮件说我现在急需这笔钱,"请告诉发给我的电子邮件乔治,我需要钱,现在是紧急的."
+159,zh-159,uniform,8058,0,calendar_query,do i have a sales meeting today,我今天有销售会议吗,今天我有卖会吗?
+160,zh-160,uniform,7978,0,calendar_query,what reminders do i have scheduled before noon tomorrow,明天中午之前我有什么日程的提醒吗,我明天下午之前安排了什么提醒?
+161,zh-161,uniform,7196,0,calendar_set,remind me the meeting with allen on fifteenth march,提醒我三月十五日和大文的会面,"提醒我,我们在15月15日与艾伦的会面."
+162,zh-162,uniform,12160,0,transport_taxi,can you book an uber tomorrow,你预定明天的动车了吗,你能预订一个Uber明天吗?
+163,zh-163,uniform,9651,0,play_radio,play netflix on my p. s. four,在我的 p. s. 四上播放酷狗音乐,在我的第4页上播放Netflix
+164,zh-164,uniform,14071,0,general_quirky,tell me what i wore yesterday,告诉我我昨天穿了什么,告诉我昨天我穿什么
+165,zh-165,uniform,17147,0,email_sendemail,reply to the mail with the following content hello you,用以下内容回复邮件你好,回答邮件的内容如下:
+166,zh-166,uniform,10038,0,cooking_recipe,i need good ideas for cooking,我需要好的烹饪点子,我需要好主意做饭
+167,zh-167,uniform,1784,0,iot_hue_lightoff,turn off the dining room,关掉饭厅,关掉餐厅
+168,zh-168,uniform,1401,0,weather_query,i occasionally pay attention,我偶尔注意一下,我偶尔会注意
+169,zh-169,uniform,665,1,iot_hue_lightdim,can you lower the lights,你能把灯调暗一点吗,你能放下灯?
+170,zh-170,uniform,11265,0,play_podcasts,play the next one,播放下一首,玩下一个
+171,zh-171,uniform,17111,0,email_querycontact,contact detail of paul,家明的联系人资料,保罗的联系细节
+172,zh-172,uniform,16765,1,email_query,what is the interview time from yesterday's email,昨天的电子邮件中的面试时间是几点,"截至昨天的电邮,面试时间是多少?"
+173,zh-173,uniform,12245,0,transport_query,when is the next train to glasgow from aberdeen,从格拉斯哥开往阿伯丁的下一趟火车是什么时候,从阿伯迪恩到格拉斯哥的下一列火车是什么时候?
+174,zh-174,repeat_of_37,2647,0,music_settings,could you please create a pandora channel for adele,你能为阿黛尔创建一个潘多拉频道吗,你能为阿德尔创建一个潘多拉频道吗?
+175,zh-175,uniform,15181,1,social_query,do i have any new friend requests,我有新朋友请求吗,我有没有新的朋友请求
+176,zh-176,uniform,931,0,music_likeness,i like this song please save,我喜欢这首歌请保存,"我喜欢这首歌,请保存"
+177,zh-177,uniform,1400,0,weather_query,i mostly pay attention,我最关注的是,我主要注意
+178,zh-178,uniform,6865,0,calendar_set,set up a notification about tomorrow's meeting at ten,设置一个通知明天十点的会议,设定明天10点的会议通知
+179,zh-179,uniform,9851,0,play_audiobook,resume joes book from where i left off last time,从我上次停下的地方恢复天龙八部,继续乔的书从我最后一次停下来
+180,zh-180,uniform,10667,1,lists_query,recite the schedules of the list,朗诵清单的日程,阅读列表的时间表
+181,zh-181,repeat_of_200,14214,0,transport_query,find the ways of travel for the same,找到同样的旅行方式,"找到旅行方式,"
+182,zh-182,uniform,10568,0,lists_remove,remove the old music list,删除旧音乐歌单,删除旧音乐列表
+183,zh-183,uniform,2647,0,music_settings,could you please create a pandora channel for adele,你能为阿黛尔创建一个潘多拉频道吗,你能为阿德尔创建一个潘多拉频道吗?
+184,zh-184,uniform,2355,0,music_query,which film the music comes from what is the name of the music,这首音乐出自哪部电影这首音乐的名字是什么,电影音乐来自哪个电影音乐的名字是什么
+185,zh-185,uniform,13154,0,qa_factoid,do you know jessica snout's phone number,你知道赵丽颖的电话号码吗,你知道杰西卡斯诺斯的电话号码吗?
+186,zh-186,uniform,1156,0,news_query,latest new on international women's day,国际妇女节最新消息,关于国际妇女节的最新消息
+187,zh-187,uniform,13619,0,recommendation_events,are there any free events on in my area today,今天附近有什么免费活动吗,今天在我的地区有没有免费活动
+188,zh-188,uniform,7117,1,calendar_remove,get rid of the events on the nineteenth from my calendar,从我的日历中删除十九日的活动,摆脱我的日历的十九日事件
+189,zh-189,uniform,10760,0,lists_query,tell me that list i wrote two days ago,告诉我我两天前的清单上写了什么,告诉我我两天前写的列表
+190,zh-190,uniform,7170,0,calendar_set,it's my mother's birthday today send me a notification every year on this date,设置每年的今天提醒是我母亲的生日,今天是我母亲的生日. 每年都会发送通知.
+191,zh-191,uniform,8404,0,calendar_query,i want to know more about this event,我想知道更多关于这个事项的内容,我想知道更多关于这个事件的信息.
+192,zh-192,uniform,8119,0,calendar_query,where is mary's birthday party being held,韩梅梅的生日聚会在哪里举办,玛丽的生日聚会在哪里举行
+193,zh-193,uniform,4544,0,takeaway_order,order a twelve piece honey mustard wing combo with seasonimg altnon the fries and a sprite as the drink,点一份十二片的蜂蜜芥末鸡翅组合配时令薯条和一杯雪碧,"订购12块的蜜果翼组合,用果和子作为饮料."
+194,zh-194,uniform,8681,1,calendar_query,is it any ones birthday,是谁的生日吗,是不是某人的生日
+195,zh-195,uniform,5658,0,play_music,play for me the music by the beatles,为我播放唐朝乐队的音乐,给我播放比特尔队的音乐
+196,zh-196,uniform,7654,0,calendar_set,mark april twenty as my brother's birthday,记住四月二十日是我兄弟的生日,标记4月二十日为我哥哥的生日
+197,zh-197,uniform,16385,0,email_query,please read new emails,请帮我朗读新电子邮件,请阅读新的电子邮件
+198,zh-198,uniform,12051,0,recommendation_locations,i need to find a gift what stores are within a one mile radius,我要买礼物一公里半径内的礼品店有哪些,我需要找到礼物. 哪些商店在一英里半径内.
+199,zh-199,uniform,14115,0,qa_definition,give details of rock sand,给出岩砂的详细信息,提供岩石沙的详细信息
+200,zh-200,uniform,11563,1,recommendation_events,what can i do in berlin,我可以在北京做什么,我在柏林能做什么
+201,zh-201,repeat_of_66,4638,0,audio_volume_other,change volume settings in the negative alexa,改变音量设置到负数,在负 alexa 中改变音量设置
+202,zh-202,uniform,14963,0,general_quirky,internet please,网路拜托,"互联网,请"
+203,zh-203,uniform,17098,0,email_query,show me any emails received in the last hour,显示给我过去的一小时收到的任何电子邮件,给我看过去一小时收到的任何电子邮件
+204,zh-204,uniform,3835,0,takeaway_order,i want to order chinese take-out,我想点中餐外卖,我想要订购中国菜.
+205,zh-205,uniform,3205,1,play_music,play poker face by lady gaga,播放张靓颖的画心,玩克脸的女士加加
+206,zh-206,repeat_of_181,13035,0,qa_maths,what is two hundred divided by ten,二百除以十等于多少,两百分之十是什么?
+207,zh-207,uniform,12252,0,transport_query,what time are the trains going to chennai leaving,去上海的火车什么时候开,列车到奈的时间是什么时候离开的
+208,zh-208,uniform,8415,0,calendar_set,add a meeting at the office with brian for three p. m. on tuesday,周二下午三点在办公室和李雷开会,增加一个会议在办公室与布莱恩的下午3点星期二
+209,zh-209,repeat_of_152,10667,1,lists_query,recite the schedules of the list,朗诵清单的日程,阅读列表的时间表
+210,zh-210,uniform,10125,0,cooking_recipe,what is the difference between bake and broil,烤和烧有什么区别,烤肉和烤肉的区别是什么?
+211,zh-211,uniform,11525,0,play_podcasts,i want to see the next podcast available,我想看可播放的下一个播客,我想看下一个播客可用
+212,zh-212,uniform,16406,0,email_sendemail,alexa start email,天猫精灵启动电子邮件,亚历克萨开始电子邮件
+213,zh-213,uniform,3603,0,news_query,what's the latest news from xinhua,有新华网的最新消息吗,华最新的新闻是什么?
+214,zh-214,uniform,7316,0,calendar_query,do i have any appointments,我有任何预约吗,我有没有约会?
+215,zh-215,repeat_of_236,16225,0,email_addcontact,open contacts,打开通讯录,开放的联系
+216,zh-216,uniform,5149,0,iot_coffee,set the coffee maker to on,将咖啡机设置为开启,设置咖啡机上
+217,zh-217,uniform,13473,0,qa_factoid,when was the us got freedom,美国什么时候获得自由,美国什么时候获得自由?
+218,zh-218,repeat_of_21,1655,0,weather_query,will it snow tomorrow at noon,明天中午会下雪吗,明天下午会有雪吗?
+219,zh-219,uniform,5016,0,news_query,tell me the news about share market ups and downs,告诉我股市涨跌情况,告诉我股市上和下跌的消息
+220,zh-220,uniform,5888,0,iot_wemo_off,power off please,请关闭电源,"关闭电源,请"
+221,zh-221,uniform,10224,0,cooking_recipe,it must be taste,它必须被品尝,这一定是味道.
+222,zh-222,uniform,8939,0,calendar_set,hayathis daughter baby shower,王萍的女儿宝宝派对,哈伊塔斯女儿的婴儿淋浴
+223,zh-223,uniform,14653,0,qa_factoid,what is the population of russia,俄罗斯有多少人口,俄罗斯人口是多少
+224,zh-224,uniform,2336,1,takeaway_order,noodles one pack make it as takeaway,面条一盒作为外卖,"一包面包,可以作为带来."
+225,zh-225,uniform,2062,0,play_music,i want some jazz music to play,我想放一些爵士乐,我想要一些爵士音乐来演奏
+226,zh-226,uniform,10352,0,play_game,play papa pear saga,玩开心消消乐,玩爸爸梨故事
+227,zh-227,uniform,8765,0,calendar_set,put my dinner at red lobster on the calendar for today at nine,把今天我的晚餐定在九点桂满陇,"现在晚上9点,我把晚餐放在红的日历上."
+228,zh-228,uniform,12866,0,transport_query,what is the timing of bagmati express,巴格马蒂特快的时间是几点,巴格马蒂快车的时间是什么?
+229,zh-229,uniform,6561,0,general_quirky,searching information online,搜索网上信息,在网上搜索信息
+230,zh-230,uniform,6352,0,general_quirky,i went to the store,我去了商店,我去商店
+231,zh-231,uniform,9678,0,play_audiobook,can you put on the giver,你能播放授者吗,你能给给人吗?
+232,zh-232,uniform,3138,0,iot_coffee,make me a cup of coffee with salted carmel flavored cream,给我做杯有咸焦糖味奶油的咖啡,"给我一个杯咖啡,用的卜味"
+233,zh-233,uniform,1933,0,weather_query,will there be a fall in temperature by tonight,今晚气温会下降吗,"到今晚,气温会下降吗?"
+234,zh-234,uniform,10960,1,lists_remove,scratch that one from the list,把那个从清单里撤除,掉这个名单
+235,zh-235,uniform,4017,1,alarm_remove,get rid of my current alarms,清除已设的闹钟,摆脱我的当前警报
+236,zh-236,uniform,16518,0,email_sendemail,add a new email for julie smith,为郑小美添加一个新电子邮件,给朱莉史密斯添加一个新的电子邮件
+237,zh-237,uniform,14912,0,qa_factoid,where was president madison born,麦迪逊总统出生在哪里,麦迪逊总统出生在哪里
+238,zh-238,uniform,15765,0,email_sendemail,answer to pawel's email,回复家明的电子邮件,回答帕威尔的电子邮件
+239,zh-239,uniform,12162,0,transport_ticket,can you book a train ticket,你能订一张火车票吗,你能预订火车票吗?
+240,zh-240,uniform,3576,0,news_query,what is the latest story from fox news,搜狐新闻的最新消息是什么,福克斯新闻最新的消息是什么?
+241,zh-241,uniform,4614,0,weather_query,will the temperature be higher than forty tomorrow,明天气温会高于四十度吗,明天的温度将超过40°C吗?
+242,zh-242,uniform,9062,0,calendar_set,can you put in lee's birthday on the twenty second of june,记下李的生日是六月二十二日,你能把李的生日放在6月20日吗?
+243,zh-243,uniform,5258,0,music_likeness,save this song to playlist,保存这首歌到歌单,保存这首歌到播放列表
+244,zh-244,uniform,6134,0,music_query,find out what song this is and tell me the name,找出这是什么歌然后告诉我名字,"找出这首歌是什么,告诉我这个歌的名字."
+245,zh-245,uniform,13881,0,qa_factoid,please give me information on michael jackson,请给我关于迈克尔杰克逊的信息,请给我关于迈克尔·杰克逊的信息
+246,zh-246,uniform,9149,1,calendar_query,what time is the black tie gala dinner supposed to begin,正式晚宴应该什么时候开始,黑晚宴应该开始什么时候?
+247,zh-247,repeat_of_185,13197,0,general_quirky,i wish it could give me advice,我希望它能给我建议,我希望它能给我一个建议
+248,zh-248,uniform,16763,1,email_query,emails in the last ten minutes,最近十分钟的电子邮件,在过去的10分钟内发送的电子邮件
+249,zh-249,uniform,15561,0,general_quirky,please look in to the matter,请调查此事,请看看这个问题
+250,zh-250,uniform,16377,0,email_sendemail,send mom an email now,现在给妈妈发送一封邮件,现在给发电子邮件
+251,zh-251,uniform,13083,0,general_quirky,drive the car and bring my friends over,开车带我的朋友过来,开车带我的朋友来
+252,zh-252,uniform,3907,0,play_music,play me last year's hits,为我播放去年的热门歌曲,给我播放去年的歌曲
+253,zh-253,uniform,9353,0,play_radio,start some music play the radio,打开收音机播放一些音乐,开始一些音乐播放广播
+254,zh-254,uniform,8284,0,calendar_remove,remove birthday from calendar,从日历中删除生日,从日历中删除生日
+255,zh-255,uniform,8230,0,calendar_query,how long will my lunch meeting be on tuesday,周二我的午餐会议要开久,星期二的午餐会将会有多长时间
+256,zh-256,uniform,8085,0,calendar_set,i'd like to set a date for this week,我想设置本周的一个日子,我希望定下一个日期.
+257,zh-257,uniform,4271,0,iot_coffee,prepare coffee now,现在准备咖啡,现在准备咖啡
+258,zh-258,uniform,2093,0,music_query,bring me the title of current music,给我一个流行音乐的名字,给我带来当前音乐的标题
+259,zh-259,uniform,10171,0,cooking_recipe,what's the recipe for fish soup,鱼汤的食谱是什么,鱼的食谱是什么?
+260,zh-260,uniform,9844,0,play_audiobook,continue the last chapter of the audio book i was listening to,继续播放我正在听的有声读物的最后一章,继续我听到的音频书的最后一章
+261,zh-261,uniform,10053,0,cooking_recipe,how do i make pizza,我如何做披萨,我怎么做披萨?
+262,zh-262,uniform,9732,0,play_audiobook,open davinci code audiobook,打开鬼吹灯的有声读物,打开达文西代码音频书
+263,zh-263,uniform,5006,1,alarm_query,what times are my alarms set for,我的闹钟定了多少次啊,警报是什么时候设置的
+264,zh-264,uniform,12905,0,transport_taxi,please reserve the next taxi a nine am,请把下一辆出租车预订在上午九点,请在上午9点预定下一辆出租车
+265,zh-265,uniform,6116,0,weather_query,info on this week weather,这周天气信息,关于本周的天气信息
+266,zh-266,uniform,5103,1,alarm_remove,olly cancel all soccer practice alarms,olly 取消所有足球训练闹钟,利取消所有的足球练习警报
+267,zh-267,uniform,6901,0,calendar_set,remind me tomorrow at ten am about the meeting,明天上午十点提醒我这个会,"提醒我明天早上十点,关于会议."
+268,zh-268,uniform,13252,0,qa_factoid,what was george eliot's first november el,李清照的第一首词是什么,乔治·埃利奥特的第一天11月是什么
+269,zh-269,uniform,15276,0,social_post,post a new status on facebook saying that i am enjoying the nice weather,在微博上发布一个新状态说我正在享受这个美好的天气,"在Facebook上发布一个新状态,说我享受了美好的天气"
+270,zh-270,uniform,11467,0,play_podcasts,play the most recent podcast for this american life,播放有关美国生活的最新播客,播放最新的美国生活播客

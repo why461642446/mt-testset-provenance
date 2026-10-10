@@ -1,4 +1,4 @@
-﻿order,item_id,english_source,target_text,intent_label,judge1_category,judge2_category,judge3_category,judge1_note,judge2_note,judge3_note
+order,item_id,english_source,target_text,intent_label,judge1_category,judge2_category,judge3_category,judge1_note,judge2_note,judge3_note
 1,zh-001,check my email for any new email from joe,查看我的电子邮件查看来自乔的任何新电子邮件,email_query,A,A,A,,,
 2,zh-002,can you turn on the radio,你能点电台吗?,play_radio,B,B,B,「点电台」不自然，通常说「打开电台」，但意图仍是播放电台,“点电台”表达不自然，但仍可推断为开启/播放电台。,"点电台=点播/点菜感,tune on 不自然,但仍可懂为开收音机"
 3,zh-003,show me some current events,给我看一些当前事件,news_query,A,B,A,,,

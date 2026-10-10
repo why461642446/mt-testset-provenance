@@ -52,11 +52,14 @@ OUTDIR = os.path.join(ROOT, "massive_mt")
 CACHE = os.path.join(OUTDIR, "cache")
 
 # MASSIVE 的 locale 代码 -> 机翻目标语言代码
-DEEPL_TARGET = {"ko": "KO", "zh": "ZH"}
+DEEPL_TARGET = {"ko": "KO", "zh": "ZH",
+                "de": "DE", "vi": "VI", "ja": "JA"}
 # NLLB-200 的语言代码（开源模型，无需 API key，可复现性优于商业 API）
-NLLB_CODE = {"ko": "kor_Hang", "zh": "zho_Hans"}
+NLLB_CODE = {"ko": "kor_Hang", "zh": "zho_Hans",
+             "de": "deu_Latn", "vi": "vie_Latn", "ja": "jpn_Jpan"}
 NLLB_MODEL = "facebook/nllb-200-distilled-600M"
-LOCALE = {"ko": "ko-KR", "zh": "zh-CN"}
+LOCALE = {"ko": "ko-KR", "zh": "zh-CN",
+          "de": "de-DE", "vi": "vi-VN", "ja": "ja-JP"}
 
 
 def nllb_translate(texts, target, batch=16, on_result=None, model_name=None):
@@ -275,7 +278,13 @@ def main():
                     continue
                 d = dict(r)                      # id/partition/intent/scenario 原样保留
                 d["utt"] = done[r["id"]]         # 只替换句子
-                d["mt_source"] = "deepl" if not args.dry_run else "mock"
+                # 血缘：必须记录真实引擎，否则语料元数据与论文不符
+                if args.dry_run:
+                    d["mt_source"] = "mock"
+                elif args.engine == "nllb":
+                    d["mt_source"] = args.nllb_model or NLLB_MODEL
+                else:
+                    d["mt_source"] = "deepl"
                 f.write(json.dumps(d, ensure_ascii=False) + "\n")
                 n += 1
         print(f"[{tgt}] 已写出 {out_path}  ({n} 行)")
